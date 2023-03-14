@@ -12,11 +12,13 @@ import pic1 from '../assests/images/pic1.png';
 import pic2 from '../assests/images/pic2.png';
 import pic3 from '../assests/images/pic3.png';
 import robot from '../assests/images/robot.png';
+import background from '../assests/images/background.png';
 import InputAdornment from '@mui/material/InputAdornment';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import CodeIcon from '@mui/icons-material/Code';
 
 
 
@@ -24,8 +26,8 @@ const Signup = () => {
   return (
     <Fragment>
 
-      <Container  maxWidth = 'lg'>
-      <Box sx={{ flexGrow: 1 }}>
+      <Container  maxWidth = 'xl' sx={{backgroundImage: `url(${background})`, backgroundRepeat : 'no-repeat' }}>
+      <Box sx={{ flexGrow: 1 , ml : '30px'}}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -38,7 +40,26 @@ const Signup = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+          <Stack
+         direction='row'
+         alignItems='center'
+         
+        >
+            
+         <Box sx={{display: 'flex'}}>
+         <Box sx={{mt: '8px' , mr: '6px'}}> <CodeIcon/></Box>
+            <Typography sx={{color : '#FFFF;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal'}}>
+                Code
+            </Typography>
+            <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal'}}>
+                It
+            </Typography>
+            <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700}}>
+                .
+            </Typography>
+         </Box>
+
+         </Stack>
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
@@ -48,40 +69,13 @@ const Signup = () => {
 
       
          <Stack
-         direction='row'
-         spacing={15}
+         direction={{md : 'column' , lg : 'row'}}
+         spacing={19}
          >
             
-       <Box sx={{flexGrow : 1 }}>
+       <Box sx={{flexGrow : 1 , ml : '30px'}}>
 
-        {/* <Stack
-         direction='row'
-         alignItems='center'
-         sx={{ mt : '42px'}}
-        >
-        <Box 
-           component="img"
-          sx={{
-           height: '28.15px',
-           width: '29.17px',
-           mr : '13px'
-          
-          }}
-          src={Vector}
-         />
-         <Box sx={{display: 'flex'}}>
-            <Typography sx={{color : '#1A3447;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal'}}>
-                Code
-            </Typography>
-            <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal'}}>
-                It
-            </Typography>
-            <Typography sx={{color : '#1A3447;' , fontSize : '28px' , fonWeight : 700}}>
-                .
-            </Typography>
-         </Box>
-
-         </Stack> */}
+        
 
 
          <Box sx={{mt : '110.5px', mb : '44px'}}>
@@ -98,7 +92,7 @@ const Signup = () => {
     <Box
     sx={{
         color : '#1A3447',
-        width: '470px',
+        width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
         borderRadius : '5px',
@@ -126,7 +120,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#B0B0B0',
-        width: '470px',
+        width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
         borderRadius : '5px',
@@ -153,7 +147,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#1A3447',
-        width: '470px',
+        width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
         borderRadius : '5px',
@@ -179,12 +173,12 @@ const Signup = () => {
 
     <Stack
      direction='row'
-     spacing={2}
+     spacing={4}
     >    
      <Box
     sx={{
         color : '#1A3447',
-        width: '228px',
+        width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
         borderRadius : '5px',
@@ -198,7 +192,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#1A3447',
-        width: '228px',
+        width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
         borderRadius : '5px',
@@ -213,7 +207,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#1A3447',
-        width: '470px',
+        width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
         borderRadius : '5px',
@@ -235,7 +229,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#1A3447',
-        width: '470px',
+        width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
         borderRadius : '5px',
@@ -254,11 +248,11 @@ const Signup = () => {
      </Box>
 
      <Box>
-     <Button sx={{height : '60px',width : '469px' , backgroundColor : '#1A3447'}} size='large' variant="contained">Sign Up</Button>
+     <Button sx={{height : '60px',width : '100%' , backgroundColor : '#1A3447'}} size='large' variant="contained">Sign Up</Button>
      </Box>
 
-     <Box >
-        <Button sx={{ ml : '40px', mb : '60px', color : '#464646',fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '16px' }}>
+     <Box sx={{display : 'flex' , justifyContent : 'center' , alignItems : 'center'}}>
+        <Button sx={{  mb :{ lg : '60px' , md : '30px'}, color : '#464646',fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '16px' }}>
         Already have an account? Log In 
         </Button>
      </Box>
@@ -276,9 +270,9 @@ const Signup = () => {
             {/* Second portion starts here */}
 
 
-            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', width : '658px', px : '35px'}}>
+            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', width : {lg : '658px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
                 
-                <Box sx={{mt : '163px'}}>
+                <Box sx={{mt : {lg : '163px' , md : '140px' , sm : '90px'}}}>
                     <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '64px' , fontWeight : 700 , lineHeight : '70px'}}>
                     Learn Coding in 
                     a Better Way With 
@@ -287,7 +281,7 @@ const Signup = () => {
                 </Box>
 
                 <Box sx={{mt : '40px'}}>
-                    <Typography sx={{color : 'rgba(26, 52, 71, 0.7);' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '17px' , fontWeight : 500 , lineHeight : '21px'}}>
+                    <Typography sx={{color : 'rgba(26, 52, 71, 0.7);' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize :{lg : '17px' , sm : '25px'} , fontWeight : 500 , lineHeight : { lg :'21px' , sm : '34px'}}}>
                     Learn coding from scratch with best mentor and become expert in the next day! Supportive community, lots of expert will help you to improve your coding skill.
                     </Typography>
                 </Box>
@@ -348,9 +342,10 @@ const Signup = () => {
                 <Box
                     component="img"
                     sx={{
+                        //    display : {lg : 'block' , sm : 'none'},
                            position : 'absolute',
                            top : '-60px',
-                           left : '25px',
+                           left : { md :'70px' , sm : '-30px'},
                         //    display : 'flex',
                         //    justifyContent : 'center',
                         //    alignItems : 'center'
