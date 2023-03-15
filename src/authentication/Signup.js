@@ -91,6 +91,7 @@ const Signup = () => {
   >
     <Box
     sx={{
+       backgroundColor : '#FFFFFF',
         color : '#1A3447',
         width: 'auto',
         height : '60px',
@@ -120,6 +121,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#B0B0B0',
+        backgroundColor : '#FFFFFF',
         width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
@@ -147,6 +149,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#1A3447',
+        backgroundColor : '#FFFFFF',
         width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
@@ -178,6 +181,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#1A3447',
+        backgroundColor : '#FFFFFF',
         width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
@@ -192,6 +196,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#1A3447',
+        backgroundColor : '#FFFFFF',
         width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
@@ -207,6 +212,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#1A3447',
+        backgroundColor : '#FFFFFF',
         width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
@@ -229,6 +235,7 @@ const Signup = () => {
      <Box
     sx={{
         color : '#1A3447',
+        backgroundColor : '#FFFFFF',
         width: 'auto',
         height : '60px',
         // border : '2px solid #1A3447',
@@ -270,7 +277,7 @@ const Signup = () => {
             {/* Second portion starts here */}
 
 
-            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', width : {lg : '658px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
+            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '658px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
                 
                 <Box sx={{mt : {lg : '163px' , md : '140px' , sm : '90px'}}}>
                     <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '64px' , fontWeight : 700 , lineHeight : '70px'}}>
