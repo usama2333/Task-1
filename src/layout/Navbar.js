@@ -8,8 +8,24 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CodeIcon from '@mui/icons-material/Code';
 import { Container, Stack } from '@mui/system';
+import { useHistory } from 'react-router-dom';
 
 const Navbar = () => {
+
+   const history = useHistory();
+   const loginHandler = () => {
+     history.replace('/login')
+   }
+
+   const logoutHandler = () => {
+    history.replace('/')
+  }
+
+  const homeHandler = () => {
+    history.replace('/home')
+  }
+
+
   return (
     <Fragment>
     <Container maxWidth = 'xl'>
@@ -32,8 +48,8 @@ const Navbar = () => {
          
         >
             
-         <Box sx={{display: 'flex'}}>
-         <Box sx={{mt: '8px' , mr: '6px'}}> <CodeIcon/></Box>
+         <Box sx={{display : 'flex'}}>
+         <Box sx={{mt: '8px' , mr: '6px' , display: {lg : 'flex', md : 'flex' , sm : 'flex', xs : 'none'}}}> <CodeIcon/></Box>
             <Typography sx={{color : '#FFFF;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal'}}>
                 Code
             </Typography>
@@ -43,12 +59,13 @@ const Navbar = () => {
             <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700}}>
                 .
             </Typography>
+            <Button onClick={homeHandler} sx={{ ml : '22px', color : '#FFFF;' ,  fontSize : '20px', fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Home</Button>
          </Box>
 
          </Stack>
           </Typography>
-          <Button sx={{color : '#FFFF;' ,  fontSize : '20px', fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Logout</Button>
-          <Button sx={{color : '#FFFF;' , fontSize : '20px' , fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Login</Button>
+          <Button onClick={logoutHandler} sx={{color : '#FFFF;' ,  fontSize : '20px', fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Logout</Button>
+          <Button onClick={loginHandler} sx={{color : '#FFFF;' , fontSize : '20px' , fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>

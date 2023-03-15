@@ -11,11 +11,50 @@ import background from '../assests/images/background.png';
 import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import { useFormik } from 'formik';
+// import { loginSchema } from '../schema/signin';
+import { useHistory } from 'react-router-dom';
+import { loginSchema } from '../schema/loginschema';
 
 
+
+const initialValues = {
+   
+    email : "",
+    password : "",
+  
+  }
 
 
 const Signup = () => {
+
+    const history = useHistory();
+
+    const logoutHandler = () => {
+        history.replace('/');
+    }
+
+    const forgotHandler = () => {
+        history.replace('/forgot');
+    }
+
+
+    const {values , errors , touched , handleBlur , handleChange , handleSubmit} = useFormik({
+        initialValues : initialValues,
+        validationSchema : loginSchema,
+        onSubmit : (values , action, ) => {
+    
+          // AddInputData(values);
+    
+         console.log('Login details here ......');
+         console.log(values);
+          
+          
+          
+        }
+      })
+
+   
   return (
     <Fragment>
 
@@ -23,58 +62,81 @@ const Signup = () => {
       
          <Stack
          direction={{md : 'column' , lg : 'row'}}
-         spacing={19}
+         spacing={20}
          >
             
-       <Box sx={{flexGrow : 1 , ml : '30px'  }}>
+       <Box sx={{flexGrow : 1 , ml : '30px'   }}>
 
          
-
-     <Stack
-     spacing='30px'
-     >
-    
-    <Box sx={{mt : {lg :'230.5px' , md : '110px' , sm : '70px'}, mb : '44px'}}>
+       <Box sx={{mt :{ lg: '230.5px' , md : '90px' , sm : '70px' , xs : '50px'}, mb : '44px'}}>
             <Typography sx={{color : '#1A3447',fontWeight : 600 , fontSize : '36px' , lineHeight : '44px' , fontFamily : 'Inter' , fontStyle : 'normal'}}>
                 Login 
             </Typography>
          </Box>
+
+
+       <form onSubmit={handleSubmit}> 
+     <Stack 
+     spacing= {{lg : '30px' , md : '25px' , sm : '20px' , xs : '20px'} }
+     >
+    
      <Box
-        sx={{ color : '#B0B0B0', backgroundColor : '#FFFFFF',  boxSizing : 'border-box',width: 'auto',height : '60px', }}
+        sx={{ color : '#B0B0B0',  boxSizing : 'border-box',width: 'auto',height : '60px', }}
        >
-       <TextField  fullWidth label="E-mail" id="fullWidth"  InputProps={{
+       <TextField  fullWidth label="E-mail" id="email" name = 'email' 
+
+        onChange={handleChange} 
+        onBlur={handleBlur}
+        value={values.email}
+       
+        InputProps={{
           endAdornment: (
             <InputAdornment position="end">
                  <EmailIcon sx={{color : '#B0B0B0'}}/>      
             </InputAdornment>
           ),
         }}/>
+         { errors.email && touched.email ? (<Typography variant='p' color='red'>{errors.email}</Typography>) : null}
      </Box>
 
 
      <Box
-    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: 'auto',height : '60px', boxSizing : 'border-box' }}
+    sx={{ color : '#1A3447', width: 'auto',height : '60px', boxSizing : 'border-box' }}
        >
-       <TextField fullWidth label="Password" id="fullWidth"  InputProps={{
+       <TextField fullWidth label="Password" id="password" name = 'password' 
+
+        onChange={handleChange} 
+        onBlur={handleBlur}
+        value={values.password} 
+       
+        InputProps={{
           endAdornment: (
             <InputAdornment position="end">
                  <VisibilityIcon sx={{color : '#B0B0B0'}}/>
             </InputAdornment>
           ),
         }}/>
+         { errors.password && touched.password ? (<Typography variant='p' color='red'>{errors.password}</Typography>) : null}
      </Box>
      </Stack>
-     <Typography sx={{mt : '17px' , mb : '27px',color : '#1A3447' , fontFamily : 'Inter', fontSize : '18px' , fontStyle : 'italic' , lineHeight : '22px' , display : 'flex' , justifyContent : 'flex-end'}}>
+
+     
+
+     <Typography sx={{mt : '7px' , mb : '7px',color : '#1A3447' , fontFamily : 'Inter', fontSize : '18px' , fontStyle : 'italic' , lineHeight : '22px' , display : 'flex' , justifyContent : 'flex-end'}}>
+        <Button onClick={forgotHandler}>
         Forgot Password ?
+        </Button>
+       
      </Typography>
 
 
      <Box>
-     <Button sx={{mb : '15px',height : '60px',width : '100%' , backgroundColor : '#1A3447'}} size='large' variant="contained">Login</Button>
+     <Button sx={{mb : '15px',height : '60px',width : '100%' , backgroundColor : '#1A3447' , fontSize : '18px' , lineHeight : '22px' , fontWeight : 500}} size='large' variant="contained"  type='submit'>Login</Button>
      </Box>
+    </form>
 
      <Box sx={{display : 'flex' , justifyContent : 'center' , alignItems : 'center'}}>
-        <Button sx={{  mb :{ lg : '60px' , md : '30px'}, color : '#464646',fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '16px' }}>
+        <Button onClick={logoutHandler} sx={{  mb :{ lg : '60px' , md : '30px'}, color : '#464646',fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '16px' }}>
         Don't have an account ? Register 
         </Button>
      </Box>
@@ -85,10 +147,10 @@ const Signup = () => {
             {/* Second portion starts here */}
 
 
-            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '658px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
+            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '495px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
                 
-                <Box sx={{mt : {lg : '163px' , md : '140px' , sm : '90px'}}}>
-                    <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '64px' , fontWeight : 700 , lineHeight : '70px'}}>
+                <Box sx={{mt : {lg : '163px' , md : '120px' , sm : '70px' , xs : '40px'}}}>
+                    <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : {lg : '64px' , md : '64px' , sm : '64px' , xs : '54px'} , fontWeight : 700 , lineHeight : '70px'}}>
                     Learn Coding in 
                     a Better Way With 
                     Expert.
@@ -96,7 +158,7 @@ const Signup = () => {
                 </Box>
 
                 <Box sx={{mt : '40px'}}>
-                    <Typography sx={{color : 'rgba(26, 52, 71, 0.7);' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize :{lg : '17px' , sm : '25px'} , fontWeight : 500 , lineHeight : { lg :'21px' , sm : '34px'}}}>
+                    <Typography sx={{color : 'rgba(26, 52, 71, 0.7);' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize :{lg : '17px' , sm : '25px' , xs : '22px'} , fontWeight : 500 , lineHeight : { lg :'21px' , sm : '34px'}}}>
                     Learn coding from scratch with best mentor and become expert in the next day! Supportive community, lots of expert will help you to improve your coding skill.
                     </Typography>
                 </Box>
@@ -154,31 +216,10 @@ const Signup = () => {
 
                 <Box
                     component="img"
-                    
+                    sx={{mb : '10px',display : 'inline-block' ,  mt : '-60px' , ml : {lg : '90px' , md : '200px', sm : '50px' , xs : '-60px'} }}
                     alt="Pic 1"
                     src={robot}
-                  />
-
-                {/* <Stack sx={{position : 'relative'}}>
-
-                <Box
-                    component="img"
-                    sx={{
-                        //    display : {lg : 'block' , sm : 'none'},
-                           position : 'absolute',
-                           top : '-60px',
-                           left : { md :'70px' , sm : '-30px'},
-                        //    display : 'flex',
-                        //    justifyContent : 'center',
-                        //    alignItems : 'center'
-                       }}
-                    alt="Pic 1"
-                    src={robot}
-                  />
-
-                </Stack> */}
-
-                
+                  />  
 
             </Box>
            
