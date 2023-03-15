@@ -13,6 +13,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useFormik } from 'formik';
 import { forgotSchema } from '../schema/forgot';
+import forgotPasswordData from '../api/forgotApi';
 
 const initialValues = {
     
@@ -33,6 +34,8 @@ const Signup = () => {
         onSubmit : (values , action, ) => {
     
           // AddInputData(values);
+          forgotPasswordData(values);
+          
     
          console.log('forgot password..............................');
          console.log(values);
@@ -160,7 +163,7 @@ const Signup = () => {
             {/* Second portion starts here */}
 
 
-            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '525px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
+            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '514px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
                 
                 <Box sx={{mt : {lg : '163px' , md : '120px' , sm : '70px' , xs : '40px'}}}>
                     <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : {lg : '64px' , md : '64px' , sm : '64px' , xs : '54px'} , fontWeight : 700 , lineHeight : '70px'}}>

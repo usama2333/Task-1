@@ -15,6 +15,7 @@ import { useFormik } from 'formik';
 // import { loginSchema } from '../schema/signin';
 import { useHistory } from 'react-router-dom';
 import { loginSchema } from '../schema/loginschema';
+import AddLoginData from '../api/loginApi';
 
 
 
@@ -44,7 +45,7 @@ const Signup = () => {
         validationSchema : loginSchema,
         onSubmit : (values , action, ) => {
     
-          // AddInputData(values);
+          AddLoginData(values, history);
     
          console.log('Login details here ......');
          console.log(values);
@@ -62,7 +63,7 @@ const Signup = () => {
       
          <Stack
          direction={{md : 'column' , lg : 'row'}}
-         spacing={20}
+         spacing={19}
          >
             
        <Box sx={{flexGrow : 1 , ml : '30px'   }}>
@@ -103,7 +104,7 @@ const Signup = () => {
      <Box
     sx={{ color : '#1A3447', width: 'auto',height : '60px', boxSizing : 'border-box' }}
        >
-       <TextField fullWidth label="Password" id="password" name = 'password' 
+       <TextField fullWidth label="Password" id="password" name = 'password' type="password"
 
         onChange={handleChange} 
         onBlur={handleBlur}
@@ -147,7 +148,7 @@ const Signup = () => {
             {/* Second portion starts here */}
 
 
-            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '495px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
+            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '443px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
                 
                 <Box sx={{mt : {lg : '163px' , md : '120px' , sm : '70px' , xs : '40px'}}}>
                     <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : {lg : '64px' , md : '64px' , sm : '64px' , xs : '54px'} , fontWeight : 700 , lineHeight : '70px'}}>

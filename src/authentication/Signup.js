@@ -140,10 +140,12 @@ const Signup = () => {
 
     <Stack
      direction='row'
-     spacing={4}
+     justifyContent={'space-between'}
+     width='100%'
+    //  spacing={4}
     >    
      <Box
-    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: 'auto',height : '60px', boxSizing : 'border-box' }}
+    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: '45%',height : '60px', boxSizing : 'border-box' }}
        >
        <TextField fullWidth label="Phone number" id="phone" name = 'phone'
 
@@ -157,9 +159,11 @@ const Signup = () => {
      </Box>
 
      <Box
-    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: 'auto',height : '60px', boxSizing : 'border-box' }}
+    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: '45%',height : '60px', boxSizing : 'border-box' }}
        >
-       <TextField fullWidth label="Country" id="country " name = "country"
+       <TextField
+       
+        fullWidth label="Country" id="country " name = "country"
 
          onChange={handleChange} 
         onBlur={handleBlur}
@@ -173,7 +177,7 @@ const Signup = () => {
      <Box
     sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: 'auto',height : '60px', boxSizing : 'border-box' }}
        >
-       <TextField fullWidth label="Password" id="password" name = 'password'
+       <TextField fullWidth label="Password" id="password" name = 'password' type="password"
 
         onChange={handleChange} 
         onBlur={handleBlur}
@@ -193,7 +197,7 @@ const Signup = () => {
      <Box
    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: 'auto',height : '60px', boxSizing : 'border-box' }}
        >
-       <TextField fullWidth label="Confirm password" id="confirmpassword" name = 'confirmpassword' 
+       <TextField fullWidth label="Confirm password" type="password" id="confirmpassword" name = 'confirmpassword' 
        
        onChange={handleChange} 
         onBlur={handleBlur}
@@ -228,7 +232,7 @@ const Signup = () => {
             {/* Second portion starts here */}
 
 
-            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '658px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
+            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '558px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
                 
                 <Box sx={{mt : {lg : '163px' , md : '120px' , sm : '70px' , xs : '40px'}}}>
                     <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : {lg : '64px' , md : '64px' , sm : '64px' , xs : '54px'}  , fontWeight : 700 , lineHeight : '70px'}}>
