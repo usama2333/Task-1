@@ -5,17 +5,21 @@ export default async function forgotPasswordData (data,history) {
 
     console.log(' Forgot password .......');
     console.log(data);
+    console.log(data.email);
+    console.log(data.oldpassword);
+    console.log(data.newpassword);
+    console.log(data.confirmpassword);
     
 
     try{
         const  response = await axios({
           method: 'post',
-          url: 'http://192.168.77.18:18055/api/user/signup',
-          Payload: {
+          url: 'http://192.168.77.18:18008/users/reset',
+          data: {
             
             email : data.email,
             oldPassword : data.oldpassword,
-            password : data.password,
+            password : data.newpassword,
             confirmPassword : data.confirmpassword,
 
           }
@@ -25,11 +29,18 @@ export default async function forgotPasswordData (data,history) {
         if(response.status === 200) {
             console.log('The response is ok');
            
-        //   history.push('/login');
+          history.replace('/login');
         }
+
+        if(response.status === 201) {
+          console.log('The response is ok');
+         
+          history.replace('/login');
+      }
     
       } catch(error) {
         console.log(error.message)
+
     
       }
       

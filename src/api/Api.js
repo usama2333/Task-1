@@ -17,8 +17,9 @@ export default async function AddInputData (data,history) {
     try{
         const  response = await axios({
           method: 'post',
-          url: 'http://192.168.77.18:18055/api/user/signup',
-          Payload: {
+          url:'http://192.168.77.18:18008/users/signup',
+          data: {
+            
             name : data.name,
             email : data.email,
             userName : data.username,
@@ -31,14 +32,23 @@ export default async function AddInputData (data,history) {
           
         });
   
-        if(response.status === 200) {
+        if(response.status === 200 ) {
             console.log('The response is ok');
+            console.log('Data is send successfully');
            
-        //   history.push('/login');
+            history.replace('/login');
         }
+
+        if(response.status === 201 ) {
+          console.log('The response is ok');
+          console.log('Data is send successfully');
+         
+          history.replace('/login');
+      }
     
       } catch(error) {
         console.log(error.message)
+        
     
       }
       

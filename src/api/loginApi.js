@@ -9,8 +9,9 @@ export default async function AddLoginData (data,history) {
     try{
         const  response = await axios({
           method: 'post',
-          url: 'http://182.176.169.225/:18008/users/login',
-          Payload: {
+          url: 'http://192.168.77.18:18008/users/login',
+
+          data: {
             email : data.email,
             password : data.password,
           }
@@ -20,8 +21,13 @@ export default async function AddLoginData (data,history) {
         if(response.status === 200) {
             console.log('The response is ok');
            
-        //   history.push('/login');
+          history.push('/home');
         }
+        if(response.status === 201) {
+          console.log('The response is ok');
+         
+        history.push('/home');
+      }
     
       } catch(error) {
         console.log(error.message)

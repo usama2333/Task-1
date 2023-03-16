@@ -14,6 +14,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useFormik } from 'formik';
 import { forgotSchema } from '../schema/forgot';
 import forgotPasswordData from '../api/forgotApi';
+import { useHistory } from 'react-router-dom';
 
 const initialValues = {
     
@@ -27,6 +28,8 @@ const initialValues = {
 
 const Signup = () => {
 
+  const history = useHistory();
+
 
     const {values , errors , touched , handleBlur , handleChange , handleSubmit} = useFormik({
         initialValues : initialValues,
@@ -34,7 +37,7 @@ const Signup = () => {
         onSubmit : (values , action, ) => {
     
           // AddInputData(values);
-          forgotPasswordData(values);
+          forgotPasswordData(values, history);
           
     
          console.log('forgot password..............................');

@@ -47,9 +47,6 @@ const Signup = () => {
     onSubmit : (values , action, ) => {
 
       AddInputData(values,history);
-
-    //  console.log('test..............................');
-    //  console.log(values);
        
     }
   })
