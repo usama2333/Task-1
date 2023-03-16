@@ -8,6 +8,7 @@ import ForgotPassword from './authentication/ForgotPassword';
 import Navbar from './layout/Navbar';
 import { Route, Switch , Redirect } from 'react-router-dom';
 import Cards from './components/Cards';
+import Error from './pages/Error';
 
 
 
@@ -32,6 +33,12 @@ function App() {
         <Route path='/home' exact>
          <Cards/>
         </Route>
+
+
+        <Route path='*'>
+           <Error/>
+       </Route>
+
 
 
        </Switch>

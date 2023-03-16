@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider , createTheme } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthContextProvider } from './store/auth-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -21,11 +22,13 @@ const theme = createTheme({
 
 root.render(
   
+  <AuthContextProvider>
   <ThemeProvider theme={theme}>
    <BrowserRouter>
     <App />
     </BrowserRouter>
   </ThemeProvider>
+  </AuthContextProvider>
  
 );
 

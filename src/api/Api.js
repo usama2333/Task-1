@@ -43,7 +43,7 @@ export default async function AddInputData (data,history) {
           console.log('The response is ok');
           console.log('Data is send successfully');
          
-          history.replace('/login');
+      history.replace('/login');
       }
     
       } catch(error) {

@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment , useContext} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,8 +9,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CodeIcon from '@mui/icons-material/Code';
 import { Container, Stack } from '@mui/system';
 import { useHistory } from 'react-router-dom';
+import AuthContext from '../store/auth-context';
 
 const Navbar = () => {
+
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
 
    const history = useHistory();
    const loginHandler = () => {
@@ -18,6 +22,7 @@ const Navbar = () => {
    }
 
    const logoutHandler = () => {
+    authCtx.logout();
     history.replace('/')
   }
 
@@ -64,8 +69,10 @@ const Navbar = () => {
 
          </Stack>
           </Typography>
-          <Button onClick={logoutHandler} sx={{color : '#FFFF;' ,  fontSize : '20px', fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Logout</Button>
-          <Button onClick={loginHandler} sx={{color : '#FFFF;' , fontSize : '20px' , fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Login</Button>
+          {isLoggedIn && 
+          <Button onClick={logoutHandler} sx={{color : '#FFFF;' ,  fontSize : '20px', fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Logout</Button>}
+          {!isLoggedIn &&
+          <Button onClick={loginHandler} sx={{color : '#FFFF;' , fontSize : '20px' , fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Login</Button>}
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { Box, Container, Stack } from '@mui/system';
 import Button from '@mui/material/Button';
-import React, {Fragment} from 'react';
+import React, {Fragment , useContext} from 'react';
 import TextField from '@mui/material/TextField';
 import pic1 from '../assests/images/pic1.png';
 import pic2 from '../assests/images/pic2.png';
@@ -16,6 +16,7 @@ import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import { loginSchema } from '../schema/loginschema';
 import AddLoginData from '../api/loginApi';
+import AuthContext from '../store/auth-context';
 
 
 
@@ -28,6 +29,8 @@ const initialValues = {
 
 
 const Signup = () => {
+
+  const authCtx = useContext(AuthContext);
 
     const history = useHistory();
 
@@ -45,7 +48,7 @@ const Signup = () => {
         validationSchema : loginSchema,
         onSubmit : (values , action, ) => {
     
-          AddLoginData(values, history);
+          AddLoginData(values, history , authCtx);
     
          console.log('Login details here ......');
          console.log(values);
