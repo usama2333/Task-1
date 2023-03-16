@@ -27,14 +27,14 @@ const Navbar = () => {
   }
 
   const homeHandler = () => {
-    
+
     history.replace('/home')
   }
 
 
   return (
     <Fragment>
-    <Container maxWidth = 'xl'>
+    <Container maxWidth = 'xl' >
         <Box sx={{ flexGrow: 1 , ml : '30px'}}>
       <AppBar position="static">
         <Toolbar>
@@ -56,13 +56,13 @@ const Navbar = () => {
             
          <Box sx={{display : 'flex'}}>
          <Box sx={{mt: '8px' , mr: '6px' , display: {lg : 'flex', md : 'flex' , sm : 'flex', xs : 'none'}}}> <CodeIcon/></Box>
-            <Typography sx={{color : '#FFFF;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal'}}>
+            <Typography sx={{color : '#FFFF;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal' , display: {lg : 'flex', md : 'flex' , sm : 'flex', xs : 'none'}}}>
                 Code
             </Typography>
-            <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal'}}>
+            <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal' , display: {lg : 'flex', md : 'flex' , sm : 'flex', xs : 'none'}}}>
                 It
             </Typography>
-            <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700}}>
+            <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700 , display: {lg : 'flex', md : 'flex' , sm : 'flex', xs : 'none'}}}>
                 .
             </Typography>
             <Button onClick={homeHandler} sx={{ ml : '22px', color : '#FFFF;' ,  fontSize : '20px', fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Home</Button>

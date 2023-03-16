@@ -57,7 +57,7 @@ const Signup = () => {
   return (
     <Fragment>
 
-      <Container  maxWidth = 'xl' sx={{backgroundImage: `url(${background})`, backgroundRepeat : 'no-repeat'  }}>
+      <Container  maxWidth = 'xl' sx={{width : {lg : '100%' , md : '90%' , sm : '90%' , xs : '100%'},backgroundImage: `url(${background})`, backgroundRepeat : 'no-repeat'  }}>
       
          <Stack
          direction={{md : 'column' , lg : 'row'}}
@@ -144,7 +144,7 @@ const Signup = () => {
     //  spacing={4}
     >    
      <Box
-    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: '45%',height : '60px', boxSizing : 'border-box' }}
+    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: '48%',height : '60px', boxSizing : 'border-box' }}
        >
        <TextField fullWidth label="Phone number" id="phone" name = 'phone'
 
@@ -158,7 +158,7 @@ const Signup = () => {
      </Box>
 
      <Box
-    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: '45%',height : '60px', boxSizing : 'border-box' }}
+    sx={{ color : '#1A3447', backgroundColor : '#FFFFFF', width: '48%',height : '60px', boxSizing : 'border-box' }}
        >
        <TextField
        
@@ -299,14 +299,17 @@ const Signup = () => {
 
                 </Stack>
 
+                <Box sx={{display : 'flex' , justifyContent : 'center', alignItems : 'center'}}>
+
+
                 <Box
                     component="img"
-                    sx={{mb : '10px',display : 'inline-block' ,  mt : '-60px' , ml : {lg : '90px' , md : '200px', sm : '50px' , xs : '-60px'} }}
+                    sx={{ mb : '10px',display : 'inline-block' ,  mt : '-60px'  }}
                     alt="Pic 1"
                     src={robot}
                   />
-            
-
+               </Box>
+               
             </Box>
            
 

@@ -9,15 +9,15 @@ import Typography from '@mui/material/Typography';
 import { Container } from '@mui/system';
 
 const Error = () => {
-    let img1 = "https://media.licdn.com/dms/image/C5612AQEPYce5KpNLyg/article-cover_image-shrink_720_1280/0/1551659700811?e=2147483647&v=beta&t=O9mBMiF-V12jCRJwaBNDWLKNL8cku2QSoCXtKP3vCHg";
+    
     let img2 = "https://thumbs.dreamstime.com/b/error-page-not-found-glitch-effect-style-vector-distorted-horizontal-glitched-lines-neon-glowing-typography-dark-203421762.jpg";
     return (
     <Fragment>
 
-      <Container sx={{mt : '100px' ,display : 'flex' , justifyContent : 'center' , alignItems : 'center'}}>
-      <Card sx={{ maxWidth: 345 }}>
+      <Container sx={{mt : '70px' ,display : 'flex' , justifyContent : 'center' , alignItems : 'center'}}>
+      <Card sx={{ maxWidth: 445 }}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 280 }}
         image= {img2}
         title="green iguana"
       />

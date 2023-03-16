@@ -64,7 +64,7 @@ const Signup = () => {
   return (
     <Fragment>
 
-      <Container  maxWidth = 'xl' sx={{backgroundImage: `url(${background})`, backgroundRepeat : 'no-repeat'  }}>
+      <Container  maxWidth = 'xl' sx={{width : {lg : '100%' , md : '90%' , sm : '90%' , xs : '100%'}, backgroundImage: `url(${background})`, backgroundRepeat : 'no-repeat'  }}>
       
          <Stack
          direction={{md : 'column' , lg : 'row'}}
@@ -128,8 +128,8 @@ const Signup = () => {
 
      
 
-     <Typography sx={{mt : '7px' , mb : '7px',color : '#1A3447' , fontFamily : 'Inter', fontSize : '18px' , fontStyle : 'italic' , lineHeight : '22px' , display : 'flex' , justifyContent : 'flex-end'}}>
-        <Button onClick={forgotHandler}>
+     <Typography sx={{mt : '7px' , mb : '7px', fontFamily : 'Inter', fontSize : '18px' , fontStyle : 'italic' , lineHeight : '22px' , display : 'flex' , justifyContent : 'flex-end'}}>
+        <Button sx={{fontStyle : 'italic',color : '#1A3447' }} onClick={forgotHandler}>
         Forgot Password ?
         </Button>
        
@@ -220,12 +220,14 @@ const Signup = () => {
 
                 </Stack>
 
+                <Box sx={{display : 'flex' , justifyContent : 'center', alignItems : 'center'}}>
                 <Box
                     component="img"
-                    sx={{mb : '10px',display : 'inline-block' ,  mt : '-60px' , ml : {lg : '90px' , md : '200px', sm : '50px' , xs : '-60px'} }}
+                    sx={{mb : '10px',display : 'inline-block' ,  mt : '-60px'  }}
                     alt="Pic 1"
                     src={robot}
                   />  
+                </Box>
 
             </Box>
            

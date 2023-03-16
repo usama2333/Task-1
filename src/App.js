@@ -10,6 +10,7 @@ import { Route, Switch , Redirect } from 'react-router-dom';
 import Cards from './components/Cards';
 import Error from './pages/Error';
 import AuthContext from './store/auth-context';
+import Navbarr from './layout/Navbarr';
 
 
 
@@ -19,6 +20,7 @@ function App() {
   
   return (
        <Fragment>
+       
        <Navbar/>
        <Switch>
         <Route path='/' exact>
@@ -40,7 +42,7 @@ function App() {
 
         {!authCtx.isLoggedIn && 
         <Route path='/home' exact>
-        <Login/>
+        <Signup/>
         </Route>}
 
 
