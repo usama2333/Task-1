@@ -16,7 +16,8 @@ import { useFormik } from 'formik';
 import { signUpSchema } from '../schema/index';
 import { useHistory } from 'react-router-dom';
 import AddInputData from '../api/Api';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const initialValues = {
@@ -30,6 +31,7 @@ const initialValues = {
 
 }
 
+const notify = () => toast("SignuP Failed"); 
 
 
 const Signup = () => {
@@ -46,7 +48,7 @@ const Signup = () => {
     validationSchema : signUpSchema,
     onSubmit : (values , action, ) => {
 
-      AddInputData(values,history);
+      AddInputData(values,history, notify);
        
     }
   })
@@ -310,7 +312,7 @@ const Signup = () => {
 
          </Stack>
       </Container>
-      
+      <ToastContainer />
     </Fragment>
   )
 }

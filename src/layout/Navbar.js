@@ -27,6 +27,7 @@ const Navbar = () => {
   }
 
   const homeHandler = () => {
+    
     history.replace('/home')
   }
 

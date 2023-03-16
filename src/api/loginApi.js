@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-export default async function AddLoginData (data,history , authCtx) {
+export default async function AddLoginData (data,history , authCtx , notify) {
 
     console.log('Api data .......');
     console.log(data); 
@@ -38,6 +38,7 @@ export default async function AddLoginData (data,history , authCtx) {
     
       } catch(error) {
         console.log(error.message)
+        notify();
     
       }
       

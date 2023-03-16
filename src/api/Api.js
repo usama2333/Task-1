@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-export default async function AddInputData (data,history) {
+export default async function AddInputData (data,history, notify) {
 
     console.log('Api data .......');
     console.log(data);
@@ -48,6 +48,7 @@ export default async function AddInputData (data,history) {
     
       } catch(error) {
         console.log(error.message)
+        notify();
         
     
       }

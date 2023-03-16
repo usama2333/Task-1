@@ -12,11 +12,12 @@ import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useFormik } from 'formik';
-// import { loginSchema } from '../schema/signin';
 import { useHistory } from 'react-router-dom';
 import { loginSchema } from '../schema/loginschema';
 import AddLoginData from '../api/loginApi';
 import AuthContext from '../store/auth-context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -27,6 +28,7 @@ const initialValues = {
   
   }
 
+  const notify = () => toast("Login Failed"); 
 
 const Signup = () => {
 
@@ -48,7 +50,7 @@ const Signup = () => {
         validationSchema : loginSchema,
         onSubmit : (values , action, ) => {
     
-          AddLoginData(values, history , authCtx);
+          AddLoginData(values, history , authCtx , notify);
     
          console.log('Login details here ......');
          console.log(values);
@@ -230,7 +232,7 @@ const Signup = () => {
 
          </Stack>
       </Container>
-      
+      <ToastContainer />
     </Fragment>
   )
 }
