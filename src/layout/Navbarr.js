@@ -15,13 +15,11 @@ import AuthContext from '../store/auth-context';
 
 
 const pages = ["Home", "profile"];
-const settings = ["login", "Logout"];
-const login = false;
 
 const Navbarr = () => {
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+ 
 
     const authCtx = useContext(AuthContext);
     const isLoggedIn = authCtx.isLoggedIn;
@@ -44,19 +42,13 @@ const Navbarr = () => {
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-    };
+   
   
     const handleCloseNavMenu = () => {
         history.replace('/home')
       setAnchorElNav(null);
     };
   
-
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
   return (
     <Fragment>
     <Container maxWidth = 'xl' >
@@ -79,7 +71,7 @@ const Navbarr = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+           
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -134,7 +126,7 @@ const Navbarr = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Button onClick={homeHandler} textAlign="center">
+                  <Button onClick={homeHandler} >
                     {page}
                   </Button>
                 </MenuItem>
@@ -146,7 +138,7 @@ const Navbarr = () => {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },

@@ -48,11 +48,7 @@ const Signup = () => {
         onSubmit : (values , action, ) => {
     
           AddLoginData(values, history , authCtx , notify);
-    
-         console.log('Login details here ......');
-         console.log(values);
-          
-          
+             
         }
       })
 
@@ -150,12 +146,9 @@ const Signup = () => {
         <Button onClick={logoutHandler}  sx={{textTransform : 'capitalize' , fontWeight : 'bold' , fontSize : '16px'}}>
         Register
         </Button>
-     </Stack>
-
-
-    
+     </Stack> 
         
-</Box>
+    </Box>
             {/* Second portion starts here */}
 
 
@@ -163,9 +156,7 @@ const Signup = () => {
                 
                 <Box sx={{mt : {lg : '163px' , md : '120px' , sm : '70px' , xs : '40px'}}}>
                     <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : {lg : '64px' , md : '64px' , sm : '64px' , xs : '54px'} , fontWeight : 700 , lineHeight : '70px'}}>
-                    Learn Coding in 
-                    a Better Way With 
-                    Expert.
+                    Learn Coding in a Better Way With Expert.
                     </Typography>
                 </Box>
 
@@ -175,47 +166,26 @@ const Signup = () => {
                     </Typography>
                 </Box>
 
-                
 
-                <Stack 
-                sx={{mt : '50px'}}
-                direction='row'
-                spacing={-1}
-                >
+                <Stack sx={{mt : '50px'}} direction='row' spacing={-1}>
                 <Box
-                    component="img"
-                    sx={{
-                            width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'
-                       }}
-                    alt="Pic 1"
-                    src={pic1}
+                    component="img" sx={{ width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'}}
+                    alt="Pic 1" src={pic1}
                   />
 
                 <Box
-                    component="img"
-                    sx={{
-                            width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'
-                       }}
-                    alt="Pic 1"
-                    src={pic2}
+                    component="img" sx={{ width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'}}
+                    alt="Pic 1" src={pic2}
                   />
 
                 <Box
-                    component="img"
-                    sx={{
-                            width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'
-                       }}
-                    alt="Pic 1"
-                    src={pic3}
+                    component="img" sx={{ width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'}}
+                    alt="Pic 1" src={pic3}
                   />
 
                 <Box
-                    component="img"
-                    sx={{
-                            width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'
-                       }}
-                    alt="Pic 1"
-                    src={pic1}
+                    component="img" sx={{ width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'}}
+                    alt="Pic 1" src={pic1}
                   />
 
                   <Box >

@@ -1,6 +1,3 @@
-
-// import './App.css';
-
 import { Fragment , useContext } from 'react';
 import Signup from './authentication/Signup';
 import Login from './authentication/Login';
@@ -11,7 +8,6 @@ import Cards from './components/Cards';
 import Error from './pages/Error';
 import AuthContext from './store/auth-context';
 import Navbarr from './layout/Navbarr';
-
 
 
 function App() {
@@ -46,18 +42,12 @@ function App() {
         <Signup/>
         </Route>}
 
-
         <Route path='*'>
            <Error/>
        </Route>
-
-
-
-       </Switch>
        
-      
-      
-      
+       </Switch>
+         
        </Fragment>
   );
 }

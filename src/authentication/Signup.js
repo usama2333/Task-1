@@ -246,46 +246,25 @@ const Signup = () => {
                     </Typography>
                 </Box>
 
-              
-                <Stack 
-                sx={{mt : '50px'}}
-                direction='row'
-                spacing={-1}
-                >
+                <Stack sx={{mt : '50px'}} direction='row' spacing={-1}>
                 <Box
-                    component="img"
-                    sx={{
-                            width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'
-                       }}
-                    alt="Pic 1"
-                    src={pic1}
+                    component="img" sx={{ width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'}}
+                    alt="Pic 1" src={pic1}
                   />
 
                 <Box
-                    component="img"
-                    sx={{
-                            width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'
-                       }}
-                    alt="Pic 1"
-                    src={pic2}
+                    component="img" sx={{ width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'}}
+                    alt="Pic 1" src={pic2}
                   />
 
                 <Box
-                    component="img"
-                    sx={{
-                            width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'
-                       }}
-                    alt="Pic 1"
-                    src={pic3}
+                    component="img" sx={{ width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'}}
+                    alt="Pic 1" src={pic3}
                   />
 
                 <Box
-                    component="img"
-                    sx={{
-                            width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'
-                       }}
-                    alt="Pic 1"
-                    src={pic1}
+                    component="img" sx={{ width : '30px' , height : '30px' , borderRadius : '999px' ,  border:' solid #FFFFFF'}}
+                    alt="Pic 1" src={pic1}
                   />
 
                   <Box >
@@ -293,8 +272,6 @@ const Signup = () => {
                         3K+ developers joined us, now it's your turn
                     </Typography>
                   </Box>
-
-
 
                 </Stack>
 
