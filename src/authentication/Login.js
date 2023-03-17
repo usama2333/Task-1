@@ -55,7 +55,6 @@ const Signup = () => {
          console.log(values);
           
           
-          
         }
       })
 
