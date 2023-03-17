@@ -72,7 +72,7 @@ const Signup = () => {
             </Typography>
          </Box>
      <Box
-        sx={{ color : '#B0B0B0',  boxSizing : 'border-box',width: 'auto',height : '60px', }}
+        sx={{ color : '#B0B0B0',  boxSizing : 'border-box',width: {xl : '100%',lg : '470px' , md : '100%', sm : '100%' , xs : '100%'} ,height : '60px', }}
        >
        <TextField  fullWidth label="E-mail" id="email" name = 'email'
 
@@ -93,7 +93,7 @@ const Signup = () => {
 
 
      <Box
-    sx={{ color : '#1A3447', width: 'auto',height : '60px', boxSizing : 'border-box' }}
+    sx={{ color : '#1A3447', width: {xl : '100%',lg : '470px' , md : '100%', sm : '100%' , xs : '100%'} ,height : '60px', boxSizing : 'border-box' }}
        >
        <TextField fullWidth label="Old Password" id="oldpassword" name = "oldpassword"
 
@@ -115,7 +115,7 @@ const Signup = () => {
 
      
      <Box
-    sx={{ color : '#1A3447',  width: 'auto',height : '60px', boxSizing : 'border-box' }}
+    sx={{ color : '#1A3447',  width: {xl : '100%',lg : '470px' , md : '100%', sm : '100%' , xs : '100%'} ,height : '60px', boxSizing : 'border-box' }}
        >
        <TextField fullWidth label="New Password" id="newpassword" name= "newpassword"
           onChange={handleChange} 
@@ -134,7 +134,7 @@ const Signup = () => {
 
      
      <Box
-    sx={{ color : '#1A3447',  width: 'auto',height : '60px', boxSizing : 'border-box' }}
+    sx={{ color : '#1A3447',  width: {xl : '100%',lg : '470px' , md : '100%', sm : '100%' , xs : '100%'} ,height : '60px', boxSizing : 'border-box' }}
        >
        <TextField fullWidth label="Confirm Password" id="confirmpassword" name = "confirmpassword" 
        
@@ -153,7 +153,9 @@ const Signup = () => {
      </Box>
 
      <Box>
-     <Button sx={{mb : '15px',height : '60px',width : '100%' , backgroundColor : '#1A3447', fontSize : '18px' , lineHeight : '22px' , fontWeight : 500 , textTransform : 'capitalize'}} size='large' variant="contained" type = 'submit'>Reset Password</Button>
+     <Button sx={{mb : '15px',height : '60px',width: {xl : '100%',lg : '470px' , md : '100%', sm : '100%' , xs : '100%'} , backgroundColor : '#1A3447', fontSize : '18px' , lineHeight : '22px' , fontWeight : 500 , textTransform : 'capitalize'}} size='large' variant="contained" type = 'submit'>
+        Reset Password
+     </Button>
      </Box>
 
      </Stack>
@@ -165,7 +167,7 @@ const Signup = () => {
             {/* Second portion starts here */}
 
 
-            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '514px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
+            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '558px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
                 
                 <Box sx={{mt : {lg : '163px' , md : '120px' , sm : '70px' , xs : '40px'}}}>
                     <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : {lg : '64px' , md : '64px' , sm : '64px' , xs : '54px'} , fontWeight : 700 , lineHeight : '70px'}}>
