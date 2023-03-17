@@ -15,6 +15,7 @@ import { forgotSchema } from '../schema/forgot';
 import forgotPasswordData from '../api/forgotApi';
 import { useHistory } from 'react-router-dom';
 
+
 const initialValues = {
     
     email : "",
@@ -33,16 +34,12 @@ const Signup = () => {
     const {values , errors , touched , handleBlur , handleChange , handleSubmit} = useFormik({
         initialValues : initialValues,
         validationSchema : forgotSchema,
-        onSubmit : (values , action, ) => {
+        onSubmit : (values , action ) => {
     
-          // AddInputData(values);
-          forgotPasswordData(values, history);
-          
+          forgotPasswordData(values, history);      
     
          console.log('forgot password..............................');
          console.log(values);
-          
-          
           
         }
       })
@@ -66,8 +63,8 @@ const Signup = () => {
         spacing= {{lg : '30px' , md : '25px' , sm : '20px' , xs : '20px'} }
      >
     
-    <Box sx={{mt :{ lg: '230.5px' , md : '90px' , sm : '70px' , xs : '50px'}, mb : '37px'}}>
-            <Typography sx={{color : '#1A3447',fontWeight : 600 , fontSize : '36px' , lineHeight : '44px' , fontFamily : 'Inter' , fontStyle : 'normal'}}>
+    <Box sx={{mt :{ lg: '230.5px' , md : '90px' , sm : '70px' , xs : '50px'}}}>
+            <Typography sx={{mb : '37px',color : '#1A3447',fontWeight : 600 , fontSize : '36px' , lineHeight : '44px' , fontFamily : 'Inter' , fontStyle : 'normal'}}>
                 Forget/Reset Password 
             </Typography>
          </Box>

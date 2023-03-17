@@ -12,8 +12,6 @@ export default async function AddInputData (data,history, notify) {
     console.log(data.country);
     console.log(data.confirmpassword);
     
-    
-
     try{
         const  response = await axios({
           method: 'post',

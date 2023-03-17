@@ -21,7 +21,8 @@ function App() {
   return (
        <Fragment>
        
-       <Navbar/>
+       {/* <Navbar/> */}
+       <Navbarr/>
        <Switch>
         <Route path='/' exact>
            <Signup/>
