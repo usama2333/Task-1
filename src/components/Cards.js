@@ -19,11 +19,11 @@ const Cards = () => {
 
   return (
     <Fragment >
-      <Container sx={{mt : '100px' }}>
+      <Container sx={{mt : '50px' }}>
       <Box sx={{display : 'flex' , flexDirection : 'row' , flexWrap : 'wrap', justifyContent :'space-around' , alignItems : 'center'}}>
     <Card sx={{ maxWidth: 345 , mt : '20px' }}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 200 }}
         image={img1}
         title="green iguana"
     
@@ -45,7 +45,7 @@ const Cards = () => {
 
     <Card sx={{ maxWidth: 345 , mt : '20px' }}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 200 }}
         image={img2}
         title="green iguana"
     
@@ -66,7 +66,7 @@ const Cards = () => {
 
     <Card sx={{ maxWidth: 345 , mt : '20px' }}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 200 }}
         image={img3}
         title="green iguana"
     

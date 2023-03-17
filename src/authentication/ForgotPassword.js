@@ -1,6 +1,5 @@
-import { Typography } from '@mui/material';
+import { Typography , Button } from '@mui/material';
 import { Box, Container, Stack } from '@mui/system';
-import Button from '@mui/material/Button';
 import React, {Fragment} from 'react';
 import TextField from '@mui/material/TextField';
 import pic1 from '../assests/images/pic1.png';
@@ -84,7 +83,7 @@ const Signup = () => {
          InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-                 <EmailIcon sx={{color : '#B0B0B0'}}/>      
+                 <EmailIcon sx={{color: values.email ? 'black' : '#B0B0B0'}}/>      
             </InputAdornment>
           ),
         }}/>
@@ -105,7 +104,7 @@ const Signup = () => {
          InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-                 <VisibilityIcon sx={{color : '#B0B0B0'}}/>
+                 <VisibilityIcon sx={{color : values.oldpassword ? 'black': '#B0B0B0'}}/>
             </InputAdornment>
           ),
         }}/>
@@ -126,7 +125,7 @@ const Signup = () => {
          InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-                 <VisibilityIcon sx={{color : '#B0B0B0'}}/>
+                 <VisibilityIcon sx={{color : values.newpassword ? 'black' : '#B0B0B0'}}/>
             </InputAdornment>
           ),
         }}/>
@@ -146,7 +145,7 @@ const Signup = () => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-                 <VisibilityIcon sx={{color : '#B0B0B0'}}/>
+                 <VisibilityIcon sx={{color: values.confirmpassword ? 'black' : '#B0B0B0'}}/>
             </InputAdornment>
           ),
         }}/>
@@ -154,7 +153,7 @@ const Signup = () => {
      </Box>
 
      <Box>
-     <Button sx={{mb : '15px',height : '60px',width : '100%' , backgroundColor : '#1A3447', fontSize : '18px' , lineHeight : '22px' , fontWeight : 500}} size='large' variant="contained" type = 'submit'>Reset Password</Button>
+     <Button sx={{mb : '15px',height : '60px',width : '100%' , backgroundColor : '#1A3447', fontSize : '18px' , lineHeight : '22px' , fontWeight : 500 , textTransform : 'capitalize'}} size='large' variant="contained" type = 'submit'>Reset Password</Button>
      </Box>
 
      </Stack>

@@ -1,14 +1,11 @@
-import { Typography } from '@mui/material';
+import { Typography , InputAdornment , Button, TextField} from '@mui/material';
 import { Box, Container, Stack } from '@mui/system';
-import Button from '@mui/material/Button';
 import React, {Fragment , useContext} from 'react';
-import TextField from '@mui/material/TextField';
 import pic1 from '../assests/images/pic1.png';
 import pic2 from '../assests/images/pic2.png';
 import pic3 from '../assests/images/pic3.png';
 import robot from '../assests/images/robot.png';
 import background from '../assests/images/background.png';
-import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useFormik } from 'formik';
@@ -18,6 +15,8 @@ import AddLoginData from '../api/loginApi';
 import AuthContext from '../store/auth-context';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 
@@ -87,7 +86,7 @@ const Signup = () => {
      >
     
      <Box
-        sx={{ color : '#B0B0B0',  boxSizing : 'border-box',width: 'auto',height : '60px', }}
+        sx={{ color : 'red',  boxSizing : 'border-box',width: {xl : 'auto',lg : '470px' , md : 'auto'},height : '60px', }}
        >
        <TextField  fullWidth label="E-mail" id="email" name = 'email' 
 
@@ -98,16 +97,17 @@ const Signup = () => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-                 <EmailIcon sx={{color : '#B0B0B0'}}/>      
+                 <EmailIcon sx={{color : values.email ? 'black': '#B0B0B0'}}/>      
             </InputAdornment>
           ),
         }}/>
          { errors.email && touched.email ? (<Typography variant='p' color='red'>{errors.email}</Typography>) : null}
      </Box>
+    
 
 
      <Box
-    sx={{ color : '#1A3447', width: 'auto',height : '60px', boxSizing : 'border-box' }}
+    sx={{ color : '#1A3447', width: {xl : 'auto',lg : '470px' , md : 'auto'},height : '60px', boxSizing : 'border-box' }}
        >
        <TextField fullWidth label="Password" id="password" name = 'password' type="password"
 
@@ -118,34 +118,43 @@ const Signup = () => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-                 <VisibilityIcon sx={{color : '#B0B0B0'}}/>
+                 <VisibilityIcon sx={{color :values.password ? 'black': '#B0B0B0'}}/>
             </InputAdornment>
           ),
         }}/>
-         { errors.password && touched.password ? (<Typography variant='p' color='red'>{errors.password}</Typography>) : null}
+        { errors.password && touched.password ? (<Typography variant='p' color='red'>{errors.password}</Typography>) : null}
      </Box>
+     
      </Stack>
 
      
 
-     <Typography sx={{mt : '7px' , mb : '7px', fontFamily : 'Inter', fontSize : '18px' , fontStyle : 'italic' , lineHeight : '22px' , display : 'flex' , justifyContent : 'flex-end'}}>
+     <Typography sx={{width: {xl : '100%',lg : '470px' , md : '100%', sm : '100%' , xs : '100%'} ,mt : '7px' , mb : '7px',fontStyle : 'italic' , lineHeight : '22px' , display : 'flex' , justifyContent : 'flex-end'}}>
         <Button sx={{fontStyle : 'italic',color : '#1A3447' }} onClick={forgotHandler}>
         Forgot Password ?
         </Button>
        
      </Typography>
-
+     
 
      <Box>
-     <Button sx={{mb : '15px',height : '60px',width : '100%' , backgroundColor : '#1A3447' , fontSize : '18px' , lineHeight : '22px' , fontWeight : 500}} size='large' variant="contained"  type='submit'>Login</Button>
+     <Button sx={{height : '60px',width: {xl : '100%',lg : '470px' , md : '100%', sm : '100%' , xs : '100%'} , backgroundColor : '#1A3447' , fontSize : '18px' , lineHeight : '22px' , fontWeight : 500 , textTransform : 'capitalize'}} size='large' variant="contained"  type='submit'>Login</Button>
      </Box>
     </form>
 
-     <Box sx={{display : 'flex' , justifyContent : 'center' , alignItems : 'center'}}>
-        <Button onClick={logoutHandler} sx={{  mb :{ lg : '60px' , md : '30px'}, color : '#464646',fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '16px' }}>
-        Don't have an account ? Register 
+     
+     <Stack
+      direction='row'
+      sx={{justifyContent : 'center' , alignItems : 'center' , mt : '15px' }}
+     >
+        <Typography sx={{color : '#464646',fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : '16px'}}>
+        Don't have an account?
+        </Typography>
+        <Button onClick={logoutHandler}  sx={{textTransform : 'capitalize' , fontWeight : 'bold' , fontSize : '16px'}}>
+        Register
         </Button>
-     </Box>
+     </Stack>
+
 
     
         
@@ -153,7 +162,7 @@ const Signup = () => {
             {/* Second portion starts here */}
 
 
-            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '443px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
+            <Box sx={{flexGrow : 1 , backgroundColor : '#E8FFFE', zIndex : '-10000', width : {lg : '558px', md : 'auto' , sm : 'auto'}, px : '40px'}}>
                 
                 <Box sx={{mt : {lg : '163px' , md : '120px' , sm : '70px' , xs : '40px'}}}>
                     <Typography sx={{color : '#1A3447' , fontFamily : 'Inter' , fontStyle : 'normal' , fontSize : {lg : '64px' , md : '64px' , sm : '64px' , xs : '54px'} , fontWeight : 700 , lineHeight : '70px'}}>
