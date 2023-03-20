@@ -25,12 +25,6 @@ const Navbar = () => {
     history.replace('/')
   }
 
-  const homeHandler = () => {
-
-    history.replace('/home')
-  }
-
-
   return (
     <Fragment>
 
@@ -46,14 +40,14 @@ const Navbar = () => {
          
         >
             
-         <Box sx={{display : 'flex'}}>
+         <Box sx={{display : 'flex' ,justifyContent : 'center' , alignItems : 'center' }}>
          
-         <Button onClick={homeHandler} sx={{textTransform : 'capitalize'}}>
+      
          <Box
-                 sx={{width : '29px' , height : '29px' , mr : '12px'}}
-                    component="img"
-                    alt="Pic 1" src={Vector}
-                  />
+            sx={{width : '29px' , height : '29px' , mr : '12px'}}
+            component="img"
+            alt="Pic 1" src={Vector}
+          />
             <Typography sx={code}>
                 Code
             </Typography>
@@ -63,7 +57,7 @@ const Navbar = () => {
             <Typography sx={it}>
                 .
             </Typography>
-          </Button>
+         
            
          
          </Box>

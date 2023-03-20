@@ -2,13 +2,9 @@ import { Typography, Button } from "@mui/material";
 import { Box, Container, Stack } from "@mui/system";
 import React, { Fragment, useState } from "react";
 import TextField from "@mui/material/TextField";
-import pic1 from "../../assests/images/pic1.png";
-import pic2 from "../../assests/images/pic2.png";
-import pic3 from "../../assests/images/pic3.png";
 import robot from "../../assests/images/robot.png";
 import background from "../../assests/images/background.png";
 import InputAdornment from "@mui/material/InputAdornment";
-
 import EmailIcon from "@mui/icons-material/Email";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -16,6 +12,10 @@ import { useFormik } from "formik";
 import { forgotSchema } from "../../schema/forgot";
 import forgotPasswordData from "../../api/forgotApi";
 import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {sign , inputBox , developersText,buttonSignUp , learnCoding ,secondPortionBox ,  
+  learnCodingText, boxes,robotSx, leranCodingBox, roundImg} from '../../styles/style';
 
 const initialValues = {
   email: "",
@@ -24,22 +24,24 @@ const initialValues = {
   confirmpassword: "",
 };
 
+const notifyy = (error) => toast(error);
+
 const Signup = () => {
+
+  const [login , setLogin] = useState(true);
   const [test, setTest] = useState("password");
-
   const history = useHistory();
-
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
-    useFormik({
+  
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
       initialValues: initialValues,
       validationSchema: forgotSchema,
       onSubmit: (values, action) => {
-        forgotPasswordData(values, history);
+        forgotPasswordData(values, notifyy,history,login , setLogin);
       },
     });
 
   const testfun = () => {
-    setTest((pre) => (pre == "text" ? "password" : "text"));
+    setTest((pre) => (pre === "text" ? "password" : "text"));
   };
 
   return (
@@ -54,7 +56,7 @@ const Signup = () => {
         }}
       >
         <Stack direction={{ md: "column-reverse", sm : 'column-reverse' , xs : 'column-reverse' ,lg: "row" }}spacing={19}>
-          <Box sx={{ flexGrow: 1, ml: "30px" }}>
+          <Box sx={{ flexGrow: 1, ml: {lg : "30px" , md : '0px'} }}>
             <form onSubmit={handleSubmit}>
               <Stack
                 spacing={{ lg: "30px", md: "25px", sm: "20px", xs: "20px" }}
@@ -65,32 +67,13 @@ const Signup = () => {
                   }}
                 >
                   <Typography
-                    sx={{
-                      mb: "37px",
-                      color: "#1A3447",
-                      fontWeight: 600,
-                      fontSize: "36px",
-                      lineHeight: "44px",
-                      fontFamily: "Inter",
-                      fontStyle: "normal",
-                    }}
+                  sx={sign}
                   >
                     Forget/Reset Password
                   </Typography>
                 </Box>
                 <Box
-                  sx={{
-                    color: "#B0B0B0",
-                    boxSizing: "border-box",
-                    width: {
-                      xl: "600px",
-                      lg: "470px",
-                      md: "100%",
-                      sm: "100%",
-                      xs: "100%",
-                    },
-                    height: "60px",
-                  }}
+                sx={inputBox}
                 >
                   <TextField
                     fullWidth
@@ -119,18 +102,7 @@ const Signup = () => {
                 </Box>
 
                 <Box
-                  sx={{
-                    color: "#1A3447",
-                    width: {
-                      xl: "600px",
-                      lg: "470px",
-                      md: "100%",
-                      sm: "100%",
-                      xs: "100%",
-                    },
-                    height: "60px",
-                    boxSizing: "border-box",
-                  }}
+                 sx={inputBox}
                 >
                   <TextField
                     fullWidth
@@ -149,7 +121,7 @@ const Signup = () => {
                             onClick={testfun}
                             width="small"
                           >
-                            {test == "text" ? (
+                            {test === "text" ? (
                               <VisibilityIcon
                                 sx={{
                                   color: values.password ? "black" : "#B0B0B0",
@@ -176,18 +148,7 @@ const Signup = () => {
                 </Box>
 
                 <Box
-                  sx={{
-                    color: "#1A3447",
-                    width: {
-                      xl: "600px",
-                      lg: "470px",
-                      md: "100%",
-                      sm: "100%",
-                      xs: "100%",
-                    },
-                    height: "60px",
-                    boxSizing: "border-box",
-                  }}
+                 sx={inputBox}
                 >
                   <TextField
                     fullWidth
@@ -206,7 +167,7 @@ const Signup = () => {
                             onClick={testfun}
                             width="small"
                           >
-                            {test == "text" ? (
+                            {test === "text" ? (
                               <VisibilityIcon
                                 sx={{
                                   color: values.password ? "black" : "#B0B0B0",
@@ -232,18 +193,7 @@ const Signup = () => {
                 </Box>
 
                 <Box
-                  sx={{
-                    color: "#1A3447",
-                    width: {
-                      xl: "600px",
-                      lg: "470px",
-                      md: "100%",
-                      sm: "100%",
-                      xs: "100%",
-                    },
-                    height: "60px",
-                    boxSizing: "border-box",
-                  }}
+               sx={inputBox}
                 >
                   <TextField
                     fullWidth
@@ -262,7 +212,7 @@ const Signup = () => {
                             onClick={testfun}
                             width="small"
                           >
-                            {test == "text" ? (
+                            {test === "text" ? (
                               <VisibilityIcon
                                 sx={{
                                   color: values.password ? "black" : "#B0B0B0",
@@ -288,29 +238,28 @@ const Signup = () => {
                 </Box>
 
                 <Box>
+                {login &&
                   <Button
-                    sx={{
-                      mb: "15px",
-                      height: "60px",
-                      width: {
-                        xl: "600px",
-                        lg: "470px",
-                        md: "100%",
-                        sm: "100%",
-                        xs: "100%",
-                      },
-                      backgroundColor: "#1A3447",
-                      fontSize: "18px",
-                      lineHeight: "22px",
-                      fontWeight: 500,
-                      textTransform: "capitalize",
-                    }}
+                   sx={buttonSignUp}
                     size="large"
                     variant="contained"
                     type="submit"
                   >
                     Reset Password
                   </Button>
+                }
+
+                {!login &&
+                  <Button
+                  disabled
+                   sx={buttonSignUp}
+                    size="large"
+                    variant="contained"
+                    type="submit"
+                  >
+                    Reset Password
+                  </Button>
+                }
                 </Box>
               </Stack>
             </form>
@@ -318,26 +267,14 @@ const Signup = () => {
           {/* Second portion starts here */}
 
           <Box
-            sx={{
-              flexGrow: 1,
-              backgroundColor: "#E8FFFE",
-              zIndex: "-10000",
-              width: { lg: "558px", md: "auto", sm: "auto" },
-              px: "40px",
-            }}
+            sx={secondPortionBox}
           >
             <Box
-              sx={{ mt: { lg: "163px", md: "120px", sm: "100px", xs: "80px" } }}
+               sx={leranCodingBox}
             >
               <Typography
-                sx={{
-                  color: "#1A3447",
-                  fontFamily: "Inter",
-                  fontStyle: "normal",
-                  fontSize: { lg: "64px", md: "64px", sm: "54px", xs: "40px" },
-                  fontWeight: { lg: "700", md: "700", sm: "600", xs: "600" },
-                  lineHeight: {lg : '70px' , md : '70px' , sm : '60px' , xs : '55px' },
-                }}
+                sx={learnCoding}
+               
               >
                 Learn Coding in a Better Way With Expert.
               </Typography>
@@ -345,14 +282,7 @@ const Signup = () => {
 
             <Box sx={{ mt: "40px" }}>
               <Typography
-                sx={{
-                  color: "rgba(26, 52, 71, 0.7);",
-                  fontFamily: "Inter",
-                  fontStyle: "normal",
-                  fontSize: { lg: "17px", sm: "25px", xs: "22px" },
-                  fontWeight: 500,
-                  lineHeight: { lg: "21px", sm: "34px" },
-                }}
+            sx={learnCodingText}
               >
                 Learn coding from scratch with best mentor and become expert in
                 the next day! Supportive community, lots of expert will help you
@@ -361,66 +291,20 @@ const Signup = () => {
             </Box>
 
             <Stack sx={{ mt: "50px" }} direction="row" spacing={-1}>
-              <Box
-                component="img"
-                sx={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "999px",
-                  border: " solid #FFFFFF",
-                }}
-                alt="Pic 1"
-                src={pic1}
-              />
 
-              <Box
-                component="img"
-                sx={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "999px",
-                  border: " solid #FFFFFF",
-                }}
-                alt="Pic 1"
-                src={pic2}
-              />
-
-              <Box
-                component="img"
-                sx={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "999px",
-                  border: " solid #FFFFFF",
-                }}
-                alt="Pic 1"
-                src={pic3}
-              />
-
-              <Box
-                component="img"
-                sx={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "999px",
-                  border: " solid #FFFFFF",
-                }}
-                alt="Pic 1"
-                src={pic1}
-              />
+            {boxes.map((box) => (
+                <Box
+                  component="img"
+                  key={box.id}
+                  sx={roundImg}
+                  alt={box.title}
+                  src={box.content}
+                ></Box>
+              ))}
 
               <Box>
                 <Typography
-                  sx={{
-                    ml: "30px",
-                    mt: "5px",
-                    color: "rgba(26, 52, 71, 0.7);",
-                    fontFamily: "Inter",
-                    fontStyle: "normal",
-                    fontSize: "17px",
-                    fontWeight: 500,
-                    lineHeight: "21px",
-                  }}
+                  sx={developersText}
                 >
                   3K+ developers joined us, now it's your turn
                 </Typography>
@@ -435,7 +319,7 @@ const Signup = () => {
             >
               <Box
                 component="img"
-                sx={{ mb: "10px", display: "inline-block", mt: "-60px"  , width : { xs : '300px', sm : '450px', md : '450px', lg : '450px'  } }}
+                sx={robotSx}
                 alt="Pic 1"
                 src={robot}
               />
@@ -443,6 +327,7 @@ const Signup = () => {
           </Box>
         </Stack>
       </Container>
+      <ToastContainer />
     </Fragment>
   );
 };

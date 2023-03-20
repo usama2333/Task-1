@@ -3,11 +3,11 @@ import Signup from './components/signup/Signup';
 import Login from './components/signin/Login';
 import ForgotPassword from './components/forgotpassword/ForgotPassword';
 import Navbar from './layout/Navbar';
-import { Route, Switch , Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Cards from './components/home/Cards';
 import Error from './components/pages/Error';
 import AuthContext from './store/auth-context';
-import Navbarr from './layout/Navbarr';
+
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
 
         {!authCtx.isLoggedIn && 
         <Route path='/home' exact>
-        <Signup/>
+        <Login/>
         </Route>}
 
         <Route path='*'>

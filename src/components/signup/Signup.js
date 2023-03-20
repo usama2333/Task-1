@@ -1,9 +1,6 @@
 import { Typography, TextField, Button, InputAdornment } from "@mui/material";
 import { Box, Container, Stack } from "@mui/system";
 import React, { Fragment, useState } from "react";
-import pic1 from "../../assests/images/pic1.png";
-import pic2 from "../../assests/images/pic2.png";
-import pic3 from "../../assests/images/pic3.png";
 import robot from "../../assests/images/robot.png";
 import background from "../../assests/images/background.png";
 import EmailIcon from "@mui/icons-material/Email";
@@ -16,9 +13,9 @@ import { useHistory } from "react-router-dom";
 import AddInputData from "../../api/Api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {sign , inputBox , inputHafBox , developersText, alreadyAccount,
-   buttonSignUp , learnCoding , learnCodingText ,  roundImg} from '../../styles/style';
 
+import {sign,inputBox,inputHafBox,developersText,alreadyAccount,buttonSignUp,learnCoding,leranCodingBox,
+  secondPortionBox,learnCodingText, robotSx,roundImg,boxes} from "../../styles/style";
 
 const initialValues = {
   name: "",
@@ -30,7 +27,7 @@ const initialValues = {
   confirmpassword: "",
 };
 
-const notify = () => toast("SignuP Failed");
+const notify = (error) => toast(error);
 
 const Signup = () => {
   const [test, setTest] = useState("password");
@@ -62,33 +59,35 @@ const Signup = () => {
       <Container
         maxWidth="xl"
         sx={{
-          width:'100%',
+          width: "100%",
           backgroundImage: `url(${background})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize : 'contain , contain'
+          backgroundSize: "contain , contain",
         }}
       >
-        <Stack direction={{ md: "column-reverse", sm : 'column-reverse' , xs : 'column-reverse' ,lg: "row" }} spacing={19}>
-          <Box sx={{ flexGrow: 1, ml: "30px" }}>
+        <Stack
+          direction={{
+            md: "column-reverse",
+            sm: "column-reverse",
+            xs: "column-reverse",
+            lg: "row",
+          }}
+          spacing={19}
+        >
+          <Box sx={{ flexGrow: 1, ml: {lg : "30px" , md : '0px'} }}>
             <Box
               sx={{
                 mt: { lg: "110.5px", md: "0px" },
                 mb: "44px",
               }}
             >
-              <Typography
-                sx={sign}
-              >
-                Sign Up
-              </Typography>
+              <Typography sx={sign}>Sign Up</Typography>
             </Box>
             <form onSubmit={handleSubmit}>
               <Stack
                 spacing={{ lg: "30px", md: "25px", sm: "20px", xs: "20px" }}
               >
-                <Box
-                 sx={inputBox}
-                >
+                <Box sx={inputBox}>
                   <TextField
                     fullWidth
                     label="Name"
@@ -114,9 +113,7 @@ const Signup = () => {
                   ) : null}
                 </Box>
 
-                <Box
-                  sx={inputBox}
-                >
+                <Box sx={inputBox}>
                   <TextField
                     fullWidth
                     label="E-mail"
@@ -142,9 +139,7 @@ const Signup = () => {
                   ) : null}
                 </Box>
 
-                <Box
-                 sx={inputBox}
-                >
+                <Box sx={inputBox}>
                   <TextField
                     fullWidth
                     label="User-name"
@@ -177,9 +172,7 @@ const Signup = () => {
 
                   //  spacing={4}
                 >
-                  <Box
-                    sx={inputHafBox}
-                  >
+                  <Box sx={inputHafBox}>
                     <TextField
                       fullWidth
                       label="Phone number"
@@ -196,9 +189,7 @@ const Signup = () => {
                     ) : null}
                   </Box>
 
-                  <Box
-                    sx={inputHafBox}
-                  >
+                  <Box sx={inputHafBox}>
                     <TextField
                       fullWidth
                       label="Country"
@@ -216,9 +207,7 @@ const Signup = () => {
                   </Box>
                 </Stack>
 
-                <Box
-                sx={inputBox}
-                >
+                <Box sx={inputBox}>
                   <TextField
                     fullWidth
                     label="Password"
@@ -261,9 +250,7 @@ const Signup = () => {
                   ) : null}
                 </Box>
 
-                <Box
-               sx={inputBox}
-                >
+                <Box sx={inputBox}>
                   <TextField
                     fullWidth
                     label="Confirm password"
@@ -284,13 +271,17 @@ const Signup = () => {
                             {test1 === "text" ? (
                               <VisibilityIcon
                                 sx={{
-                                  color: values.confirmpassword ? "black" : "#B0B0B0",
+                                  color: values.confirmpassword
+                                    ? "black"
+                                    : "#B0B0B0",
                                 }}
                               />
                             ) : (
                               <VisibilityOffIcon
                                 sx={{
-                                  color: values.confirmpassword ? "black" : "#B0B0B0",
+                                  color: values.confirmpassword
+                                    ? "black"
+                                    : "#B0B0B0",
                                 }}
                               />
                             )}
@@ -327,9 +318,7 @@ const Signup = () => {
                 mt: "15px",
               }}
             >
-              <Typography
-                sx={alreadyAccount}
-              >
+              <Typography sx={alreadyAccount}>
                 Already have an account?
               </Typography>
               <Button
@@ -346,29 +335,15 @@ const Signup = () => {
           </Box>
           {/* Second portion starts here */}
 
-          <Box
-            sx={{
-              flexGrow: 1,
-              backgroundColor: "#E8FFFE",
-              zIndex: "-10000",
-              width: { lg: "558px", md: "auto", sm: "auto" },
-              px: "40px",
-            }}
-          >
-            <Box
-              sx={{ mt: { lg: "163px", md: "120px", sm: "100px", xs: "80px" } }}
-            >
-              <Typography
-                sx={learnCoding}
-              >
+          <Box sx={secondPortionBox}>
+            <Box sx={leranCodingBox}>
+              <Typography sx={learnCoding}>
                 Learn Coding in a Better Way With Expert.
               </Typography>
             </Box>
 
             <Box sx={{ mt: "40px" }}>
-              <Typography
-                sx={learnCodingText}
-              >
+              <Typography sx={learnCodingText}>
                 Learn coding from scratch with best mentor and become expert in
                 the next day! Supportive community, lots of expert will help you
                 to improve your coding skill.
@@ -376,38 +351,19 @@ const Signup = () => {
             </Box>
 
             <Stack sx={{ mt: "50px" }} direction="row" spacing={-1}>
-              <Box
-                component="img"
-                sx={roundImg}
-                alt="Pic 1"
-                src={pic1}
-              />
 
-              <Box
-                component="img"
-                sx={roundImg}
-                alt="Pic 1"
-                src={pic2}
-              />
-
-              <Box
-                component="img"
-                sx={roundImg}
-                alt="Pic 1"
-                src={pic3}
-              />
-
-              <Box
-                component="img"
-                sx={roundImg}
-                alt="Pic 1"
-                src={pic1}
-              />
+              {boxes.map((box) => (
+                <Box
+                  component="img"
+                  key={box.id}
+                  sx={roundImg}
+                  alt={box.title}
+                  src={box.content}
+                ></Box>
+              ))}
 
               <Box>
-                <Typography
-                  sx={developersText}
-                >
+                <Typography sx={developersText}>
                   3K+ developers joined us, now it's your turn
                 </Typography>
               </Box>
@@ -422,7 +378,7 @@ const Signup = () => {
             >
               <Box
                 component="img"
-                sx={{ mb: "10px", display: "inline-block", mt: "-60px", width : { xs : '300px', sm : '450px', md : '450px', lg : '450px'  } }}
+                sx={robotSx}
                 alt="Pic 1"
                 src={robot}
               />

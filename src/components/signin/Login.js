@@ -1,9 +1,6 @@
 import { Typography, InputAdornment, Button, TextField } from "@mui/material";
 import { Box, Container, Stack } from "@mui/system";
 import React, { Fragment, useContext, useState } from "react";
-import pic1 from "../../assests/images/pic1.png";
-import pic2 from "../../assests/images/pic2.png";
-import pic3 from "../../assests/images/pic3.png";
 import robot from "../../assests/images/robot.png";
 import background from "../../assests/images/background.png";
 import EmailIcon from "@mui/icons-material/Email";
@@ -16,15 +13,17 @@ import AddLoginData from "../../api/loginApi";
 import AuthContext from "../../store/auth-context";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {sign , inputBox , forgotPassword, inputHafBox , developersText, alreadyAccount,
-  buttonSignUp , learnCoding , learnCodingText ,  roundImg} from '../../styles/style';
+import {sign , inputBox , forgotPassword, developersText, alreadyAccount,
+  buttonSignUp , boxes, robotSx, learnCoding,leranCodingBox ,secondPortionBox, learnCodingText ,  roundImg} from '../../styles/style';
 
+
+  
 const initialValues = {
   email: "",
   password: "",
 };
 
-const notify = () => toast("Login Failed");
+const notify = (error) => toast(error);
 
 const Signup = () => {
   const authCtx = useContext(AuthContext);
@@ -46,12 +45,12 @@ const Signup = () => {
       initialValues: initialValues,
       validationSchema: loginSchema,
       onSubmit: (values, action) => {
-        AddLoginData(values, history, authCtx, notify , login , setLogin);
+        AddLoginData(values, history, authCtx, notify , login , setLogin );
       },
     });
 
   const testfun = () => {
-    setTest((pre) => (pre == "text" ? "password" : "text"));
+    setTest((pre) => (pre === "text" ? "password" : "text"));
   };
 
   return (
@@ -66,7 +65,7 @@ const Signup = () => {
         }}
       >
         <Stack direction={{ md: "column-reverse", sm : 'column-reverse' , xs : 'column-reverse' ,lg: "row" }} spacing={19}>
-          <Box sx={{ flexGrow: 1, ml: "30px" }}>
+          <Box sx={{ flexGrow: 1, ml: {lg : "30px" , md : '0px'} }}>
             <Box
               sx={{
                 mt: { lg: "250.5px", md: "0px" },
@@ -132,7 +131,7 @@ const Signup = () => {
                             onClick={testfun}
                             width="small"
                           >
-                            {test == "text" ? (
+                            {test === "text" ? (
                               <VisibilityIcon
                                 sx={{
                                   color: values.password ? "black" : "#B0B0B0",
@@ -227,16 +226,10 @@ const Signup = () => {
           {/* Second portion starts here */}
 
           <Box
-            sx={{
-              flexGrow: 1,
-              backgroundColor: "#E8FFFE",
-              zIndex: "-10000",
-              width: { lg: "558px", md: "auto", sm: "auto" },
-              px: "40px",
-            }}
+            sx={secondPortionBox}
           >
             <Box
-              sx={{ mt: { lg: "163px", md: "120px", sm: "100px", xs: "80px" } }}
+              sx={leranCodingBox}
             >
               <Typography
                sx={learnCoding}
@@ -256,33 +249,17 @@ const Signup = () => {
             </Box>
 
             <Stack sx={{ mt: "50px" }} direction="row" spacing={-1}>
-              <Box
-                component="img"
-                sx={roundImg}
-                alt="Pic 1"
-                src={pic1}
-              />
 
-              <Box
-                component="img"
-                sx={roundImg}
-                alt="Pic 1"
-                src={pic2}
-              />
-
-              <Box
-                component="img"
-                sx={roundImg}
-                alt="Pic 1"
-                src={pic3}
-              />
-
-              <Box
-                component="img"
-                sx={roundImg}
-                alt="Pic 1"
-                src={pic1}
-              />
+            {boxes.map((box) => (
+                <Box
+                  component='img'
+                  key={box.id}
+                  sx={roundImg}
+                  alt = {box.title}
+                  src = {box.content}
+                > 
+                </Box>
+              ))}
 
               <Box>
                 <Typography
@@ -302,7 +279,7 @@ const Signup = () => {
             >
               <Box
                 component="img"
-                sx={{ mb: "10px", display: "inline-block", mt: "-60px" , width : { xs : '300px', sm : '450px', md : '450px', lg : '450px'  }}}
+                sx={robotSx}
                 alt="Pic 1"
                 src={robot}
               />

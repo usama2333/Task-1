@@ -1,3 +1,16 @@
+import pic1 from "../assests/images/pic1.png";
+import pic2 from "../assests/images/pic2.png";
+import pic3 from "../assests/images/pic3.png";
+
+
+export const boxes = [
+    { id: 1, title: "pic1", content: pic1 },
+    { id: 2, title: "pic2", content: pic2 },
+    { id: 3, title: "pic3", content: pic3 },
+    { id: 4, title: "pic4", content: pic1 },
+  ];
+  
+ 
  export const sign ={
     color: "#1A3447",
     fontWeight: 600,
@@ -37,6 +50,19 @@
     lineHeight: "22px",
     fontWeight: 500,
     textTransform: "capitalize",
+  }
+
+  export const secondPortionBox = {
+    flexGrow: 1,
+    backgroundColor: "#E8FFFE",
+    zIndex: "-10000",
+    width: { lg: "558px", md: "auto", sm: "auto" },
+    px: "40px",
+  }
+
+  export const leranCodingBox = {
+    
+     mt: { lg: "163px", md: "120px", sm: "100px", xs: "80px" } 
   }
 
   export const learnCoding = {
@@ -115,4 +141,9 @@
       lineHeight: "22px",
       display: "flex",
       justifyContent: "flex-end",
+  }
+
+  export const robotSx =  {
+    mb: "10px", display: "inline-block", mt: "-60px"  ,
+    width : { xs : '300px', sm : '450px', md : '450px', lg : '450px'}  
   }
