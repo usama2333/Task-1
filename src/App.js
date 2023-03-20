@@ -1,11 +1,11 @@
 import { Fragment , useContext } from 'react';
-import Signup from './authentication/Signup';
-import Login from './authentication/Login';
-import ForgotPassword from './authentication/ForgotPassword';
+import Signup from './components/signup/Signup';
+import Login from './components/signin/Login';
+import ForgotPassword from './components/forgotpassword/ForgotPassword';
 import Navbar from './layout/Navbar';
 import { Route, Switch , Redirect } from 'react-router-dom';
-import Cards from './components/Cards';
-import Error from './pages/Error';
+import Cards from './components/home/Cards';
+import Error from './components/pages/Error';
 import AuthContext from './store/auth-context';
 import Navbarr from './layout/Navbarr';
 
@@ -17,8 +17,8 @@ function App() {
   return (
        <Fragment>
        
-       {/* <Navbar/> */}
-       <Navbarr/>
+       <Navbar/>
+       {/* <Navbarr/> */}
        <Switch>
         <Route path='/' exact>
            <Signup/>
@@ -35,7 +35,8 @@ function App() {
         {authCtx.isLoggedIn && 
         <Route path='/home' exact>
          <Cards/>
-        </Route>}
+        </Route>
+        }
 
         {!authCtx.isLoggedIn && 
         <Route path='/home' exact>
@@ -45,7 +46,7 @@ function App() {
         <Route path='*'>
            <Error/>
        </Route>
-       
+
        </Switch>
          
        </Fragment>

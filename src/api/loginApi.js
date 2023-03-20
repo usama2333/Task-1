@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-export default async function AddLoginData (data,history , authCtx , notify) {
+export default async function AddLoginData (data,history , authCtx , notify, login , setLogin) {
 
     try{
         const  response = await axios({
@@ -20,14 +20,20 @@ export default async function AddLoginData (data,history , authCtx , notify) {
         if(response.status === 200) {
 
           history.push('/home');
+          setLogin(true);
         }
         if(response.status === 201) {
          
         history.push('/home');
+        setLogin(true);
       }
     
       } catch(error) {
         console.log(error.message)
+        setLogin(false);
+        setTimeout(() => {
+          setLogin(true);
+        }, 6000);
         notify();
     
       }

@@ -7,6 +7,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Container , Box } from '@mui/system';
+import background from '../../assests/images/background.png';
+
+
 
 const Cards = () => {
 
@@ -15,13 +18,14 @@ const Cards = () => {
     const img2 = 'https://cdn-media-1.freecodecamp.org/images/1*FDNeKIUeUnf0XdqHmi7nsw.png';
 
     const img3 = 'https://4.bp.blogspot.com/-s2EhTt57oeU/XHtQtO1QNLI/AAAAAAAANW8/KYkPQEZUyocSpA2RzqCcVt31imXPi63RACLcBGAs/s1600/Free%2BCourses%2Bto%2Blearn%2BJavaScript.jpg';
-
-
+    const img4 = 'https://www.zdnet.com/a/img/resize/a0dcec40a8cd8d2e1b3a9e12a05c2819622d20be/2021/07/19/8a337c80-5ed6-43a1-98fb-b981d420890f/programming-languages-shutterstock-1680857539.jpg?auto=webp&fit=crop&height=1200&width=1200';
+   
+  
   return (
     <Fragment >
-      <Container sx={{mt : '50px' }}>
+      <Container sx={{height : '100%', mt : '0px' , backgroundImage: `url(${background})`}}>
       <Box sx={{display : 'flex' , flexDirection : 'row' , flexWrap : 'wrap', justifyContent :'space-around' , alignItems : 'center'}}>
-    <Card sx={{ maxWidth: 345 , mt : '20px' }}>
+    <Card sx={{ maxWidth: 345 , mt : '120px' }}>
       <CardMedia
         sx={{ height: 200 }}
         image={img1}
@@ -43,7 +47,7 @@ const Cards = () => {
     </Card>
 
 
-    <Card sx={{ maxWidth: 345 , mt : '20px' }}>
+    <Card sx={{ maxWidth: 345 , mt : '120px' }}>
       <CardMedia
         sx={{ height: 200 }}
         image={img2}
@@ -64,7 +68,7 @@ const Cards = () => {
       </CardActions>
     </Card>
 
-    <Card sx={{ maxWidth: 345 , mt : '20px' }}>
+    <Card sx={{ maxWidth: 345 , mt : '120px' }}>
       <CardMedia
         sx={{ height: 200 }}
         image={img3}

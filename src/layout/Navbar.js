@@ -4,12 +4,11 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import CodeIcon from '@mui/icons-material/Code';
 import { Container, Stack } from '@mui/system';
 import { useHistory } from 'react-router-dom';
 import AuthContext from '../store/auth-context';
+import Vector from '../assests/images/Vector.png'
+import {code , it} from '../styles/style';
 
 const Navbar = () => {
 
@@ -34,19 +33,12 @@ const Navbar = () => {
 
   return (
     <Fragment>
-    <Container maxWidth = 'xl' >
-        <Box sx={{ flexGrow: 1 , ml : '30px'}}>
-      <AppBar position="static">
+
+    <Container maxWidth = 'xl' sx={{position : 'relative' }} >
+        <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="absolute" sx={{backgroundColor : 'transparent' , boxShadow : 'none' , pl : '20px'}}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+        
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           <Stack
          direction='row'
@@ -55,25 +47,33 @@ const Navbar = () => {
         >
             
          <Box sx={{display : 'flex'}}>
-         <Box sx={{mt: '8px' , mr: '6px' , display: {lg : 'flex', md : 'flex' , sm : 'flex', xs : 'none'}}}> <CodeIcon/></Box>
-            <Typography sx={{color : '#FFFF;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal' , display: {lg : 'flex', md : 'flex' , sm : 'flex', xs : 'none'}}}>
+         
+         <Button onClick={homeHandler} sx={{textTransform : 'capitalize'}}>
+         <Box
+                 sx={{width : '29px' , height : '29px' , mr : '12px'}}
+                    component="img"
+                    alt="Pic 1" src={Vector}
+                  />
+            <Typography sx={code}>
                 Code
             </Typography>
-            <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700 , fontFamily : 'Inter' , fontStyle : 'normal' , display: {lg : 'flex', md : 'flex' , sm : 'flex', xs : 'none'}}}>
+            <Typography sx={it}>
                 It
             </Typography>
-            <Typography sx={{color : '#40CAF5;' , fontSize : '28px' , fonWeight : 700 , display: {lg : 'flex', md : 'flex' , sm : 'flex', xs : 'none'}}}>
+            <Typography sx={it}>
                 .
             </Typography>
-            <Button onClick={homeHandler} sx={{ ml : '22px', color : '#FFFF;' ,  fontSize : '20px', fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Home</Button>
+          </Button>
+           
+         
          </Box>
 
          </Stack>
           </Typography>
           {isLoggedIn && 
-          <Button onClick={logoutHandler} sx={{color : '#FFFF;' ,  fontSize : '20px', fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Logout</Button>}
+          <Button variant='contained'  onClick={logoutHandler} color="primary">Logout</Button>}
           {!isLoggedIn &&
-          <Button onClick={loginHandler} sx={{color : '#FFFF;' , fontSize : '20px' , fontFamily : 'Inter' , fontStyle : 'normal' }} color="inherit">Login</Button>}
+          <Button variant='contained' onClick={loginHandler}  color="primary">Login</Button>}
         </Toolbar>
       </AppBar>
     </Box>
