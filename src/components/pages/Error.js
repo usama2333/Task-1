@@ -6,16 +6,18 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Container } from '@mui/system';
+import { Container , Box } from '@mui/system';
 
 const Error = () => {
     
     let img2 = "https://thumbs.dreamstime.com/b/error-page-not-found-glitch-effect-style-vector-distorted-horizontal-glitched-lines-neon-glowing-typography-dark-203421762.jpg";
+    
     return (
     <Fragment>
 
-      <Container sx={{mt : '70px' ,display : 'flex' , justifyContent : 'center' , alignItems : 'center'}}>
-      <Card sx={{ maxWidth: 445 }}>
+      <Container maxWidth="xl"  sx={{ backgroundColor : '#984646', width : '100%' , height : '650px' , backgroundSize : 'cover'}} >
+      <Box sx={{ display : 'flex' , justifyContent : 'center' , alignItems : 'center'}}>
+      <Card sx={{ maxWidth: 445, mt : '80px' }}>
       <CardMedia
         sx={{ height: 280 }}
         image= {img2}
@@ -30,10 +32,11 @@ const Error = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button variant='contained' size="small">Share</Button>
+        <Button variant= 'contained' size="small">Learn More</Button>
       </CardActions>
     </Card>
+    </Box>
       </Container>
     </Fragment>
   )
