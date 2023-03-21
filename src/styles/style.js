@@ -9,8 +9,14 @@ export const boxes = [
     { id: 3, title: "pic3", content: pic3 },
     { id: 4, title: "pic4", content: pic1 },
   ];
+
+  export const stackDirection = {
+    md: "column-reverse", 
+    sm : 'column-reverse' , 
+    xs : 'column-reverse' ,
+    lg: "row"
+  }
   
- 
  export const sign ={
     color: "#1A3447",
     fontWeight: 600,
@@ -18,6 +24,7 @@ export const boxes = [
     lineHeight: "44px",
     fontFamily: "Inter",
     fontStyle: "normal",
+    
   }
 
   export const inputBox = {
@@ -50,6 +57,7 @@ export const boxes = [
     lineHeight: "22px",
     fontWeight: 500,
     textTransform: "capitalize",
+   
   }
 
   export const secondPortionBox = {
@@ -146,4 +154,17 @@ export const boxes = [
   export const robotSx =  {
     mb: "10px", display: "inline-block", mt: "-60px"  ,
     width : { xs : '300px', sm : '450px', md : '450px', lg : '450px'}  
+  }
+
+  export const errorCon = {
+    backgroundColor : '#984646', 
+    width : '100%' , 
+    height : '650px' , 
+    backgroundSize : 'cover'
+  }
+
+  export const errorBox = {
+    display : 'flex' , 
+    justifyContent : 'center' , 
+    alignItems : 'center'
   }

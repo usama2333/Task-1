@@ -54,7 +54,7 @@ const Navbar = () => {
             <Typography sx={it}>
                 It
             </Typography>
-            <Typography sx={it}>
+            <Typography sx={code}>
                 .
             </Typography>
          

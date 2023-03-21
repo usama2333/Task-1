@@ -1,6 +1,6 @@
 import { Typography, Button } from "@mui/material";
 import { Box, Container, Stack } from "@mui/system";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState , useContext } from "react";
 import TextField from "@mui/material/TextField";
 import robot from "../../assests/images/robot.png";
 import background from "../../assests/images/background.png";
@@ -13,9 +13,10 @@ import { forgotSchema } from "../../schema/forgot";
 import forgotPasswordData from "../../api/forgotApi";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import AuthContext from "../../store/auth-context";
 import "react-toastify/dist/ReactToastify.css";
 import {sign , inputBox , developersText,buttonSignUp , learnCoding ,secondPortionBox ,  
-  learnCodingText, boxes,robotSx, leranCodingBox, roundImg} from '../../styles/style';
+  learnCodingText, boxes,robotSx, leranCodingBox,stackDirection, roundImg} from '../../styles/style';
 
 const initialValues = {
   email: "",
@@ -31,6 +32,7 @@ const Signup = () => {
   const [login , setLogin] = useState(true);
   const [test, setTest] = useState("password");
   const history = useHistory();
+  const authCtx =  useContext(AuthContext);
   
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
       initialValues: initialValues,
@@ -55,7 +57,7 @@ const Signup = () => {
           backgroundSize : 'contain , contain'
         }}
       >
-        <Stack direction={{ md: "column-reverse", sm : 'column-reverse' , xs : 'column-reverse' ,lg: "row" }}spacing={19}>
+        <Stack direction={stackDirection}spacing={19}>
           <Box sx={{ flexGrow: 1, ml: {lg : "30px" , md : '0px'} }}>
             <form onSubmit={handleSubmit}>
               <Stack
@@ -238,7 +240,7 @@ const Signup = () => {
                 </Box>
 
                 <Box>
-                {login &&
+                {!authCtx.isLoggedIn &&
                   <Button
                    sx={buttonSignUp}
                     size="large"
@@ -249,7 +251,7 @@ const Signup = () => {
                   </Button>
                 }
 
-                {!login &&
+                {authCtx.isLoggedIn &&
                   <Button
                   disabled
                    sx={buttonSignUp}

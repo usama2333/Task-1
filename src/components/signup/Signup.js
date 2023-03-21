@@ -1,6 +1,6 @@
 import { Typography, TextField, Button, InputAdornment } from "@mui/material";
 import { Box, Container, Stack } from "@mui/system";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState , useContext } from "react";
 import robot from "../../assests/images/robot.png";
 import background from "../../assests/images/background.png";
 import EmailIcon from "@mui/icons-material/Email";
@@ -13,9 +13,10 @@ import { useHistory } from "react-router-dom";
 import AddInputData from "../../api/Api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AuthContext from "../../store/auth-context";
 
 import {sign,inputBox,inputHafBox,developersText,alreadyAccount,buttonSignUp,learnCoding,leranCodingBox,
-  secondPortionBox,learnCodingText, robotSx,roundImg,boxes} from "../../styles/style";
+  secondPortionBox,learnCodingText, robotSx,stackDirection,roundImg,boxes} from "../../styles/style";
 
 const initialValues = {
   name: "",
@@ -33,6 +34,7 @@ const Signup = () => {
   const [test, setTest] = useState("password");
   const [test1, setTest1] = useState("password");
 
+  const authCtx =  useContext(AuthContext);
   const history = useHistory();
 
   const loginHandler = () => {
@@ -66,12 +68,7 @@ const Signup = () => {
         }}
       >
         <Stack
-          direction={{
-            md: "column-reverse",
-            sm: "column-reverse",
-            xs: "column-reverse",
-            lg: "row",
-          }}
+          direction={stackDirection}
           spacing={19}
         >
           <Box sx={{ flexGrow: 1, ml: {lg : "30px" , md : '0px'} }}>
@@ -298,6 +295,7 @@ const Signup = () => {
                 </Box>
 
                 <Box>
+                {!authCtx.isLoggedIn && 
                   <Button
                     sx={buttonSignUp}
                     size="large"
@@ -306,6 +304,19 @@ const Signup = () => {
                   >
                     Sign Up
                   </Button>
+                }
+
+                {authCtx.isLoggedIn && 
+                  <Button
+                    disabled
+                    sx={buttonSignUp}
+                    size="large"
+                    variant="contained"
+                    type="submit"
+                  >
+                    Sign Up
+                  </Button>
+                }
                 </Box>
               </Stack>
             </form>

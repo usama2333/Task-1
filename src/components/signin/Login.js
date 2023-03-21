@@ -14,9 +14,7 @@ import AuthContext from "../../store/auth-context";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {sign , inputBox , forgotPassword, developersText, alreadyAccount,
-  buttonSignUp , boxes, robotSx, learnCoding,leranCodingBox ,secondPortionBox, learnCodingText ,  roundImg} from '../../styles/style';
-
-
+  buttonSignUp , boxes, robotSx,stackDirection, learnCoding,leranCodingBox ,secondPortionBox, learnCodingText ,  roundImg} from '../../styles/style';
   
 const initialValues = {
   email: "",
@@ -26,6 +24,7 @@ const initialValues = {
 const notify = (error) => toast(error);
 
 const Signup = () => {
+  
   const authCtx = useContext(AuthContext);
   const [test, setTest] = useState("password");
   const [login , setLogin] = useState(true);
@@ -64,7 +63,7 @@ const Signup = () => {
           backgroundSize : 'contain , contain'
         }}
       >
-        <Stack direction={{ md: "column-reverse", sm : 'column-reverse' , xs : 'column-reverse' ,lg: "row" }} spacing={19}>
+        <Stack direction={stackDirection} spacing={19}>
           <Box sx={{ flexGrow: 1, ml: {lg : "30px" , md : '0px'} }}>
             <Box
               sx={{
@@ -169,7 +168,7 @@ const Signup = () => {
               </Typography>
 
               <Box>
-              {login && 
+              {!authCtx.isLoggedIn && 
                 <Button
                   sx={buttonSignUp}
                   size="large"
@@ -180,7 +179,7 @@ const Signup = () => {
                 </Button>
               }
 
-              {!login && 
+              {authCtx.isLoggedIn && 
                 <Button
                 disabled
                 sx={buttonSignUp}

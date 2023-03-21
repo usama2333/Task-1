@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Container , Box } from '@mui/system';
+import {errorCon , errorBox} from '../../styles/style'
 
 const Error = () => {
     
@@ -15,8 +16,8 @@ const Error = () => {
     return (
     <Fragment>
 
-      <Container maxWidth="xl"  sx={{ backgroundColor : '#984646', width : '100%' , height : '650px' , backgroundSize : 'cover'}} >
-      <Box sx={{ display : 'flex' , justifyContent : 'center' , alignItems : 'center'}}>
+      <Container maxWidth="xl"  sx={errorCon} >
+      <Box sx={errorBox}>
       <Card sx={{ maxWidth: 445, mt : '80px' }}>
       <CardMedia
         sx={{ height: 280 }}
@@ -33,7 +34,7 @@ const Error = () => {
       </CardContent>
       <CardActions>
         <Button variant='contained' size="small">Share</Button>
-        <Button variant= 'contained' size="small">Learn More</Button>
+        <Button variant= 'contained ' size="small">Learn More</Button>
       </CardActions>
     </Card>
     </Box>
