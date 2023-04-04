@@ -75,17 +75,18 @@ const Signup = () => {
             <Box
               sx={{
                 mt: { lg: "110.5px", md: "0px" },
-                mb: "44px",
+                mb: "30px",
               }}
             >
               <Typography sx={sign}>Sign Up</Typography>
             </Box>
             <form onSubmit={handleSubmit}>
               <Stack
-                spacing={{ lg: "30px", md: "25px", sm: "20px", xs: "20px" }}
+                spacing={{ lg: "26px", md: "25px", sm: "20px", xs: "20px" }}
               >
                 <Box sx={inputBox}>
                   <TextField
+                   size="small"
                     fullWidth
                     label="Name"
                     id="name"
@@ -112,6 +113,7 @@ const Signup = () => {
 
                 <Box sx={inputBox}>
                   <TextField
+                   size="small"
                     fullWidth
                     label="E-mail"
                     id="email"
@@ -138,6 +140,7 @@ const Signup = () => {
 
                 <Box sx={inputBox}>
                   <TextField
+                   size="small"
                     fullWidth
                     label="User-name"
                     id="username"
@@ -171,6 +174,7 @@ const Signup = () => {
                 >
                   <Box sx={inputHafBox}>
                     <TextField
+                     size="small"
                       fullWidth
                       label="Phone number"
                       id="phone"
@@ -188,6 +192,7 @@ const Signup = () => {
 
                   <Box sx={inputHafBox}>
                     <TextField
+                     size="small"
                       fullWidth
                       label="Country"
                       id="country "
@@ -206,6 +211,7 @@ const Signup = () => {
 
                 <Box sx={inputBox}>
                   <TextField
+                   size="small"
                     fullWidth
                     label="Password"
                     id="password"
@@ -217,8 +223,8 @@ const Signup = () => {
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
-                          <Button
-                            sx={{ width: "0px", height: "0px", mr: "-20px" }}
+                          <Box
+                            sx={{ width: "0px", height: "0px", mt: "-20px", ml : '-20px' }}
                             onClick={testfun}
                             width="small"
                           >
@@ -235,7 +241,7 @@ const Signup = () => {
                                 }}
                               />
                             )}
-                          </Button>
+                          </Box>
                         </InputAdornment>
                       ),
                     }}
@@ -249,6 +255,7 @@ const Signup = () => {
 
                 <Box sx={inputBox}>
                   <TextField
+                   size="small"
                     fullWidth
                     label="Confirm password"
                     type={test1}
@@ -260,8 +267,8 @@ const Signup = () => {
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
-                          <Button
-                            sx={{ width: "0px", height: "0px", mr: "-20px" }}
+                          <Box
+                            sx={{ width: "0px", height: "0px", ml: "-20px" , mt : '-20px' }}
                             onClick={testfun1}
                             width="small"
                           >
@@ -282,7 +289,7 @@ const Signup = () => {
                                 }}
                               />
                             )}
-                          </Button>
+                          </Box>
                         </InputAdornment>
                       ),
                     }}
@@ -353,7 +360,7 @@ const Signup = () => {
               </Typography>
             </Box>
 
-            <Box sx={{ mt: "40px" }}>
+            <Box sx={{ mt: "20px" }}>
               <Typography sx={learnCodingText}>
                 Learn coding from scratch with best mentor and become expert in
                 the next day! Supportive community, lots of expert will help you
@@ -361,7 +368,7 @@ const Signup = () => {
               </Typography>
             </Box>
 
-            <Stack sx={{ mt: "50px" }} direction="row" spacing={-1}>
+            <Stack sx={{ mt: "20px" }} direction="row" spacing={-1}>
 
               {boxes.map((box) => (
                 <Box
@@ -385,6 +392,7 @@ const Signup = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                pb : '20px'
               }}
             >
               <Box

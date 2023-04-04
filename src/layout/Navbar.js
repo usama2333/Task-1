@@ -8,7 +8,7 @@ import { Container, Stack } from '@mui/system';
 import { useHistory } from 'react-router-dom';
 import AuthContext from '../store/auth-context';
 import Vector from '../assests/images/Vector.png'
-import {code , it} from '../styles/style';
+import { code , it } from './style';
 
 const Navbar = () => {
 
@@ -44,7 +44,7 @@ const Navbar = () => {
          
       
          <Box
-            sx={{width : '29px' , height : '29px' , mr : '12px'}}
+            sx={{width : '22px' , height : '22px' , mr : '12px'}}
             component="img"
             alt="Pic 1" src={Vector}
           />
@@ -65,9 +65,9 @@ const Navbar = () => {
          </Stack>
           </Typography>
           {isLoggedIn && 
-          <Button variant='contained'  onClick={logoutHandler} color="primary">Logout</Button>}
+          <Button variant='contained' sx={{fontSize : '12px'}}  onClick={logoutHandler} color="primary">Logout</Button>}
           {!isLoggedIn &&
-          <Button variant='contained' onClick={loginHandler}  color="primary">Login</Button>}
+          <Button variant='contained' sx={{fontSize : '12px'}}  onClick={loginHandler}  color="primary">Login</Button>}
         </Toolbar>
       </AppBar>
     </Box>
