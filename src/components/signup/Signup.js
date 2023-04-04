@@ -62,6 +62,7 @@ const Signup = () => {
         maxWidth="xl"
         sx={{
           width: "100%",
+          height : '530px',
           backgroundImage: `url(${background})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain , contain",
@@ -392,7 +393,7 @@ const Signup = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                pb : '20px'
+                pb : '0px'
               }}
             >
               <Box

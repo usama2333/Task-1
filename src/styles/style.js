@@ -70,16 +70,16 @@ export const boxes = [
 
   export const leranCodingBox = {
     
-     mt: { lg: "100px", md: "120px", sm: "100px", xs: "80px" } 
+     mt: { lg: "120px", md: "120px", sm: "100px", xs: "80px" } 
   }
 
   export const learnCoding = {
     color: "#1A3447",
     fontFamily: "Inter",
     fontStyle: "normal",
-    fontSize: { lg: "50px", md: "64px", sm: "54px", xs: "40px" },
+    fontSize: { lg: "50px", md: "54px", sm: "50px", xs: "38px" },
     fontWeight: { lg: "700", md: "700", sm: "600", xs: "600" },
-    lineHeight: {lg : '55px' , md : '70px' , sm : '60px' , xs : '55px' },
+    lineHeight: {lg : '55px' , md : '70px' , sm : '60px' , xs : '50px' },
   }
 
   export const learnCodingText = {
