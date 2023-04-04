@@ -62,7 +62,7 @@ const Signup = () => {
           <Box sx={{ flexGrow: 1, ml: {lg : "30px" , md : '0px'} }}>
             <form onSubmit={handleSubmit}>
               <Stack
-                spacing={{ lg: "36px", md: "25px", sm: "20px", xs: "20px" }}
+                spacing={{  xs: "36px" }}
               >
                 <Box
                   sx={{
@@ -99,7 +99,7 @@ const Signup = () => {
                   />
 
                   {errors.email && touched.email ? (
-                    <Typography variant="p" color="red">
+                    <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                       {errors.email}
                     </Typography>
                   ) : null}
@@ -146,7 +146,7 @@ const Signup = () => {
                   />
 
                   {errors.oldpassword && touched.oldpassword ? (
-                    <Typography variant="p" color="red">
+                    <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                       {errors.oldpassword}
                     </Typography>
                   ) : null}
@@ -192,7 +192,7 @@ const Signup = () => {
                     }}
                   />
                   {errors.newpassword && touched.newpassword ? (
-                    <Typography variant="p" color="red">
+                    <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                       {errors.newpassword}
                     </Typography>
                   ) : null}
@@ -238,7 +238,7 @@ const Signup = () => {
                     }}
                   />
                   {errors.confirmpassword && touched.confirmpassword ? (
-                    <Typography variant="p" color="red">
+                    <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                       {errors.confirmpassword}
                     </Typography>
                   ) : null}

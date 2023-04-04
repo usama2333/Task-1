@@ -75,7 +75,7 @@ const Signup = () => {
           <Box sx={{ flexGrow: 1, ml: {lg : "30px" , md : '0px'} }}>
             <Box
               sx={{
-                mt: { lg: "110.5px", md: "0px" },
+                mt: { lg: "105.5px", md: "0px" },
                 mb: "30px",
               }}
             >
@@ -83,7 +83,7 @@ const Signup = () => {
             </Box>
             <form onSubmit={handleSubmit}>
               <Stack
-                spacing={{ lg: "35px", md: "25px", sm: "20px", xs: "20px" }}
+                spacing={{ xs: "36px" }}
               >
                 <Box sx={inputBox}>
                   <TextField
@@ -106,7 +106,7 @@ const Signup = () => {
                     }}
                   />
                   {errors.name && touched.name ? (
-                    <Typography variant="p" color="red">
+                    <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                       {errors.name}
                     </Typography>
                   ) : null}
@@ -133,7 +133,7 @@ const Signup = () => {
                     }}
                   />
                   {errors.email && touched.email ? (
-                    <Typography variant="p" color="red" >
+                    <Typography variant="p" color="red" sx={{fontSize : '14px'}} >
                       {errors.email}
                     </Typography>
                   ) : null}
@@ -160,7 +160,7 @@ const Signup = () => {
                     }}
                   />
                   {errors.username && touched.username ? (
-                    <Typography variant="p" color="red">
+                    <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                       {errors.username}
                     </Typography>
                   ) : null}
@@ -185,7 +185,7 @@ const Signup = () => {
                       value={values.phone}
                     />
                     {errors.phone && touched.phone ? (
-                      <Typography variant="p" color="red">
+                      <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                         {errors.phone}
                       </Typography>
                     ) : null}
@@ -203,7 +203,7 @@ const Signup = () => {
                       value={values.country}
                     />
                     {errors.country && touched.country ? (
-                      <Typography variant="p" color="red">
+                      <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                         {errors.country}
                       </Typography>
                     ) : null}
@@ -248,7 +248,7 @@ const Signup = () => {
                     }}
                   />
                   {errors.password && touched.password ? (
-                    <Typography variant="p" color="red">
+                    <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                       {errors.password}
                     </Typography>
                   ) : null}
@@ -296,7 +296,7 @@ const Signup = () => {
                     }}
                   />
                   {errors.confirmpassword && touched.confirmpassword ? (
-                    <Typography variant="p" color="red">
+                    <Typography variant="p" color="red" sx={{fontSize : '14px'}}>
                       {errors.confirmpassword}
                     </Typography>
                   ) : null}
