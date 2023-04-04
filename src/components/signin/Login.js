@@ -81,7 +81,7 @@ const Signup = () => {
 
             <form onSubmit={handleSubmit}>
               <Stack
-                spacing={{ lg: "26px", md: "25px", sm: "20px", xs: "20px" }}
+                spacing={{ lg: "36px", md: "25px", sm: "20px", xs: "20px" }}
               >
                 <Box
                   sx={inputBox}

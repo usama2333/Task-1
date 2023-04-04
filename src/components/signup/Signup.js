@@ -83,7 +83,7 @@ const Signup = () => {
             </Box>
             <form onSubmit={handleSubmit}>
               <Stack
-                spacing={{ lg: "26px", md: "25px", sm: "20px", xs: "20px" }}
+                spacing={{ lg: "35px", md: "25px", sm: "20px", xs: "20px" }}
               >
                 <Box sx={inputBox}>
                   <TextField
@@ -133,7 +133,7 @@ const Signup = () => {
                     }}
                   />
                   {errors.email && touched.email ? (
-                    <Typography variant="p" color="red">
+                    <Typography variant="p" color="red" >
                       {errors.email}
                     </Typography>
                   ) : null}
@@ -334,7 +334,7 @@ const Signup = () => {
               sx={{
                 justifyContent: "center",
                 alignItems: "center",
-                mt: "15px",
+                // mt: "15px",
               }}
             >
               <Typography sx={alreadyAccount}>
@@ -393,7 +393,7 @@ const Signup = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                pb : '0px'
+                
               }}
             >
               <Box

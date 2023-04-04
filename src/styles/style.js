@@ -41,6 +41,7 @@ export const boxes = [
     width: "48%",
     // height: "60px",
     boxSizing: "border-box",
+    mb : '-10px'
   }
 
   export const buttonSignUp = {
